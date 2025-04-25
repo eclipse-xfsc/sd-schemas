@@ -1,0 +1,62 @@
+PricingModel:
+    subClassOf: []
+    prefix: 'trusted-cloud'
+    attributes:
+    # 5.6 Transparent pricing model
+    # 5.6.1 Specifications for the pricing model
+    -   title: 'pricingModel'
+        prefix: 'trusted-cloud'
+        dataType: 'xsd:string'
+        cardinality: '1..1'
+        description: 'Details about used pricing model.'
+        exampleValues: [ 'Freetext' ]
+
+    # 5.6.2 Is there a pricing model publicly available for all customers?
+    -   title: 'isPublic'
+        prefix: 'trusted-cloud'
+        dataType: 'xsd:string'
+        valueIn: [ 'on demand', 'publicly available']
+        cardinality: '0..1'
+        description: 'Is the pricing model publicly available to all customers?'
+        exampleValues: [ 'on demand', 'publicly available']
+
+    # 5.6.3 Link to the pricing model
+    -   title: 'pricingModelLink'
+        prefix: 'trusted-cloud'
+        dataType: 'xsd:anyURI'
+        cardinality: '1..1'
+        description: 'Link to the pricing model.'
+        exampleValues: [ 'www.acme.com/princing.pdf' ]
+
+    # 5.6.4 Specifications for the contract runtimes
+    -   title: 'contractDuration'
+        prefix: 'trusted-cloud'
+        dataType: 'xsd:string'
+        cardinality: '1..1'
+        description: 'Specifications for the contract duration.'
+        exampleValues: [ 'Freetext' ]
+
+    # 5.6.5 Specifications regarding termination modalities and deadlines
+    -   title: 'terminationModalities'
+        prefix: 'trusted-cloud'
+        dataType: 'xsd:string'
+        cardinality: '1..1'
+        description: 'Information about termination modalities and periods'
+        exampleValues: [ 'Freetext' ]
+
+    # 5.6.6 Is there a free trial phase offered?
+    -   title: 'freeTrialPhase'
+        prefix: 'trusted-cloud'
+        dataType: 'xsd:boolean'
+        cardinality: '1..1'
+        description: 'Is there a free trial phase?'
+        exampleValues: [ 'True', 'False' ]
+
+    # 5.6.7 Are the same data protections offered in test phase?
+    -   title: 'sameDataProtections'
+        prefix: 'trusted-cloud'
+        dataType: 'xsd:boolean'
+        cardinality: '1..1'
+        description: 'Has the free trial phase the same data protection as a commercial service?'
+        exampleValues: [ 'True','False' ]
+

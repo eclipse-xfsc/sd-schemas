@@ -1,0 +1,29 @@
+AuditabilityProfile:
+ # A.1.3
+ subClassOf: []
+ prefix: 'trusted-cloud'
+ attributes:
+  # A.1.3.1
+  -  title: 'auditability'
+     prefix: 'trusted-cloud'
+     dataType: 'xsd:boolean'
+     cardinality: '1..1'
+     description: 'Is it possible for the user to request an audit?'
+     exampleValues: [ 'yes', 'no' ]
+
+  # A.1.3.2
+  -  title: 'audits'
+     prefix: 'trusted-cloud'
+     dataType: 'xsd:string'
+     cardinality: '1..*'
+     description: 'Description of audits which were already performed.'
+     exampleValues: [ 'data protection audits' ]
+
+  # A.1.3.3
+  -  title: 'auditor'
+     prefix: 'trusted-cloud'
+     dataType: 'xsd:string'
+     valueIn: [ 'by the user', 'by a mandated auditor' ]
+     cardinality: '0..1'
+     description: 'Can audits on processes and organizational procedures related to data protection and security be conducted?'
+     exampleValues: [ 'by the user', 'by a mandated auditor' ]

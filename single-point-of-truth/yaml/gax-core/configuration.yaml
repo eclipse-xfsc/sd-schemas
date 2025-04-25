@@ -1,0 +1,18 @@
+Configuration:
+    abstract: True
+    subClassOf: []
+    prefix: 'gax-core'
+    attributes:
+    -   title: 'name'
+        prefix: 'gax-core'
+        dataType: 'xsd:string'
+        cardinality: '0..1'
+        description: 'Name of the configuration artifact.'
+        exampleValues: ['Configuration Example']
+
+    -   title: 'description'
+        prefix: 'gax-core'
+        dataType: 'xsd:string'
+        cardinality: '0..1'
+        description: 'A more detailed description of the configuration artifact.'
+        exampleValues: ['Configuration Example for this European platform']

@@ -1,0 +1,30 @@
+ChangeManagement:
+    subClassOf: []
+    prefix: 'trusted-cloud'
+    attributes:
+    # 5.7 Change management
+    # 5.7.1 Are contract changes communicated beforehand to the customer?
+    -   title: 'chnagesCommunicatedBeforehand'
+        prefix: 'trusted-cloud'
+        dataType: 'xsd:string'
+        valueIn: [ 'All changes will be communicated', 'All changes will be communicated and the customer gets a special termination right' ]
+        cardinality: '0..1'
+        description: 'Are changes in the contract communicated to the customer beforehand?'
+        exampleValues: [ 'All changes will be communicated', 'All changes will be communicated and the customer gets a special termination right' ]
+
+    # 5.7.2 Are rules for the change management defined in the contract?
+    -   title: 'rulesForChangeManagementInContract'
+        prefix: 'trusted-cloud'
+        dataType: 'xsd:string'
+        valueIn: [ 'Not in the contract', 'In the contract' ]
+        cardinality: '0..1'
+        description: 'Are rules for change management in the contract?'
+        exampleValues: [ 'Not in the contract', 'In the contract' ]
+
+    # 5.7.3 Description of the rules for the change management
+    -   title: 'changeManagementRules'
+        prefix: 'trusted-cloud'
+        dataType: 'xsd:string'
+        cardinality: '1..1'
+        description: 'Description of change management rules'
+        exampleValues: [ 'Freetext' ]

@@ -1,0 +1,21 @@
+TechnicalIntegration:
+    subClassOf: []
+    prefix: 'trusted-cloud'
+    attributes:
+    # 9.3 Integration
+    # 9.3.1 Are standardized APIs offered for service integration?
+    -   title: 'standardizedAPI'
+        prefix: 'trusted-cloud'
+        dataType: 'xsd:string'
+        valueIn: [ 'No APIS are offered', 'Documented APIs', 'Standardized APIs' ]
+        cardinality: '0..1'
+        description: 'Is there a standardized API to integrate the service into the customers IT-landscape?'
+        exampleValues: [ 'No APIS are offered', 'Documented APIs', 'Standardized APIs' ]
+
+    # 9.3.2 Description of the offered APIs for service integration
+    -   title: 'description'
+        prefix: 'trusted-cloud'
+        dataType: 'xsd:string'
+        cardinality: '1..1'
+        description: 'Description of the offered APIs to integrate the services'
+        exampleValues: [ 'Freetext' ]

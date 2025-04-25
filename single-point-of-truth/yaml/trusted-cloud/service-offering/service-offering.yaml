@@ -1,0 +1,146 @@
+ServiceOffering:
+    # A.2 Service Offering
+    subClassOf: [ 'gax-core:ServiceOffering' ]
+    prefix: 'trusted-cloud'
+    attributes:
+    ### inherit from super class
+    -   title: 'offeredBy'
+        prefix: 'gax-core'
+        dataType: 'trusted-cloud:Provider'
+        cardinality: '1..1'
+        description: 'DID of trusted cloud provider self-descrription offering this service offering.'
+        exampleValues: ['https://gaia-x.eu']
+
+    # A.2.1 General Information about the service (DT)
+    -   title: 'generalInformation'
+        prefix: 'trusted-cloud'
+        cardinality: '1..1'
+        dataType: 'trusted-cloud:GeneralInformationService'
+        description: 'Basic classification of the service as per provision type and service model.'
+        exampleValues: [ '(a structure object of type GeneralInformationService' ]
+
+    # A.2.2 Functional description of the service (DT)
+    -   title: 'functionalDescription'
+        prefix: 'trusted-cloud'
+        cardinality: '1..1'
+        dataType: 'trusted-cloud:FunctionalDescriptionService'
+        description: 'Functional description of the service and functional categorization of the service.'
+        exampleValues: [ '(a structure object of type GeneralInformationService' ]
+
+    # A.2.3 Maturity Level of the service
+    # Maturity Level is mapped to VC, which are not refered here. Instead,
+    # 'credentialSubject' of maturity level VC referes to service's DID
+    #-   title: 'maturityLevel'
+    #    prefix: 'trusted-cloud'
+    #    cardinality: '0..1'
+    #    dataType: 'trusted-cloud:MaturityLevel'
+    #    description: 'Details on the scope of service usage.'
+    #    exampleValues: [ '(DID to Verifiable Credential of maturity level a structure object of type MaturityLevel' ]
+
+    # A.2.4 References
+    # References modelled as seperate VC ideally sugend by customer himself
+    #-   title: 'referenceCustomers'
+    #    prefix: 'trusted-cloud'
+    #    cardinality: '0..*'
+    #    dataType: 'trusted-cloud:ReferenceProfile'
+    #    description: 'Details on reference customers and use cases.'
+    #    exampleValues: [ '' ]
+
+    # A.2.5 Main Contant to the service
+    -   title: 'mainContact'
+        prefix: 'trusted-cloud'
+        dataType: 'vcard:Agent'
+        cardinality: '0..1'
+        description: 'Main contact of this service.'
+        exampleValues: [ '(Jana Mustermann, jana.mustermann@acme.com, +49 030 123456789)' ]
+
+    # A.2.6 Other contacts to tge service
+    -   title: 'additionalContact'
+        prefix: 'trusted-cloud'
+        dataType: 'vcard:Agent'
+        cardinality: '0..*'
+        description: 'Further contacts of this service.'
+        exampleValues: [ '(Jana Mustermann, jana.mustermann@acme.com, +49 030 123456789)' ]
+
+    # A.2.7 Type of data processing
+    -   title: 'typeOfProcessedData'
+        prefix: 'trusted-cloud'
+        # TODO: we can make a boolean out of it, which is optional. 'personalDataProcessing'
+        dataType: 'xsd:string'
+        valueIn: [ 'no information', 'personal data according to GDPR' ]
+        cardinality: '0..1'
+        description: 'Which type of data are to be processes?'
+        exampleValues: [ 'no information', 'personal data  according to GDPR' ]
+
+    # A.3 Sub Companies
+    -   title: 'subContractors'
+        prefix: 'trusted-cloud'
+        dataType: 'trusted-cloud:SubContractor' ## TODO: Provider also possible wie should define a union here
+        cardinality: '0..*'
+        description: 'SubCompanies required to operated the service.'
+        exampleValues: [ '(a structure object of type SubContractor)' ]
+
+    # A.3 Data Centre
+    -   title: 'dataCentres'
+        prefix: 'trusted-cloud'
+        dataType: 'trusted-cloud:DataCentre'
+        cardinality: '1..*'
+        description: 'Data centre required to operated the service'
+        exampleValues: [ '(a structure object of type DataCentre)' ]
+
+    # A.4 Certificates
+    -   title: 'certificates'
+        prefix: 'trusted-cloud'
+        dataType: 'trusted-cloud:CertificateScope'
+        cardinality: '0..*'
+        description: 'Details about certificates, which are relevant for this service.'
+        exampleValues: [ '(a structured object of type Certificate' ]
+
+    # A.5 Contracts
+    -   title: 'contracts'
+        prefix: 'trusted-cloud'
+        dataType: 'trusted-cloud:Contract'
+        cardinality: '1..*'
+        description: 'Description of technical and organizational mechanism to ensure data protection.'
+        exampleValues: [ '(a structure object of type Contract)' ]
+
+    # A.6 Security
+    -   title: 'security'
+        prefix: 'trusted-cloud'
+        dataType: 'trusted-cloud:Security'
+        cardinality: '1..1'
+        description: 'Representation of technical and organizational mechanisms to ensure data protection and IT security.'
+        exampleValues: [ '(a structure object of type Security)' ]
+
+    # A.7 Data Protection
+    -   title: 'dataProtection'
+        prefix: 'trusted-cloud'
+        dataType: 'trusted-cloud:DataProtection'
+        cardinality: '1..1'
+        description: 'Technical and organizational mechanisms to ensure data protection and IT security.'
+        exampleValues: [ '(a structure object of type DataProtection)' ]
+
+    # A.8 Operative Processes
+    -   title: 'operativeProcesses'
+        prefix: 'trusted-cloud'
+        dataType: 'trusted-cloud:OperativeProcesses'
+        cardinality: '1..1'
+        description: 'Representation of technical and functional prerequisites for ues, migration and exchange off service.'
+        exampleValues: [ '(a structure object of type OperativeProcesses)' ]
+
+    # A.9 Interoperability
+    -   title: 'interoperability'
+        prefix: 'trusted-cloud'
+        dataType: 'trusted-cloud:Interoperability'
+        cardinality: '1..1'
+        description: 'Technical and functional requirements to change or migrate service.'
+        exampleValues: [ '(a structure object of type Interoperability)' ]
+
+    # A.10 Service Architecture
+    -   title: 'serviceArchitecture'
+        prefix: 'trusted-cloud'
+        dataType: 'trusted-cloud:ServiceArchitecture'
+        cardinality: '1..1'
+        description: 'Technical architecture of this service.'
+        exampleValues: [ '(a structure object of type ServiceArchitecture)' ]
+

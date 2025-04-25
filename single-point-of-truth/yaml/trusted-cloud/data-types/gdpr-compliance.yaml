@@ -1,0 +1,80 @@
+GdprCompliance:
+ subClassOf: []
+ prefix: 'trusted-cloud'
+ attributes:
+     # 7.2 Formal data security requirements
+    # 7.2.1 Are the formal data security requirements fulfilled?
+    -   title: 'gdprFullfiled'
+        prefix: 'trusted-cloud'
+        dataType: 'xsd:string'
+        valueIn: [ 'Requirements are fulfilled', 'Measurements for fullfillment are documented in the contract', 'Measurements for fullfillment are documented publicly', 'Measurements for fullfillment are evident by a certificate' ]
+        cardinality: '0..1'
+        description: 'How are the formal requirements specified by GDPR fulfilled?'
+        exampleValues: [ 'Requirements are fulfilled', 'Measurements for fullfillment are documented in the contract', 'Measurements for fullfillment are documented publicly', 'Measurements for fullfillment are evident by a certificate' ]
+
+    # 7.2.2 Will an ADV contract based on the EU-DSGVO be agreed on with the customer?
+    -   title: 'opdContracted'
+        prefix: 'trusted-cloud'
+        dataType: 'xsd:string'
+        valueIn: [ 'No contract', 'Written contract', 'Written/electronic contract is offer on demand acc. to Art. 28 GDPR', 'Written/ electronic contract is offerd in accordance with Art. 28 GDPR.' ]
+        cardinality: '0..1'
+        description: 'How is an office of data privacy contract or legal act agreed with the client based in the EU GDPR requirements?'
+        exampleValues: [ 'No contract', 'Written contract', 'Written/electronic contract is offer on demand acc. to Art. 28 GDPR', 'Written/ electronic contract is offerd in accordance with Art. 28 GDPR.' ]
+
+    # 7.2.3 Support for DPIA in the contract
+    -   title: 'dpdiaContracted'
+        prefix: 'trusted-cloud'
+        dataType: 'xsd:boolean'
+        cardinality: '1..1'
+        description: 'Is the support of the controller of data protection impact assessment (DPIA) contractually agreed, in case this is necessary for the client? (e.g. Date processing on a large scale", "data transfer outside the EU", etc).'
+        exampleValues: [ 'True', 'False' ]
+
+    # 7.2.4 Contracted Pseudonymization or Encryption of personalized data
+    -   title: 'personalDataEncryptionContracted'
+        prefix: 'trusted-cloud'
+        dataType: 'xsd:boolean'
+        cardinality: '1..1'
+        description: 'Is there contracted pseudonymization or encryption of personal data?'
+        exampleValues: [ 'True', 'False' ]
+
+    # 7.2.5 Contracted implementation of data subject rights
+    -   title: 'applicationOfDataSubjectRightsContracted'
+        prefix: 'trusted-cloud'
+        dataType: 'xsd:boolean'
+        cardinality: '1..1'
+        description: 'Is the application of data subject rights contractually guaranteed?'
+        exampleValues: [ 'True', 'False' ]
+
+    # 7.2.6 Contracted deletion of data and links to copies in the cloud
+    -   title: 'dataDeletionContracted'
+        prefix: 'trusted-cloud'
+        dataType: 'xsd:boolean'
+        cardinality: '1..1'
+        description: 'Is the deletion of data including links to the relevant data and data copies in the cloud contractually assured?'
+        exampleValues: [ 'True', 'False' ]
+
+    # 7.2.7 Are specifications in the ADV contract regarding the type of personal data and the categories of the persons?
+    -   title: 'clientFeedbackRequired'
+        prefix: 'trusted-cloud'
+        dataType: 'xsd:boolean'
+        cardinality: '1..1'
+        description: 'Does the office of data privacy contract require information from the client regarding the type of personal data as well as categories of the peronss concerns?'
+        exampleValues: [ 'True', 'False' ]
+
+    # 7.3 Proof of compliance
+    # 7.3.1 Which proofs are required according to the ADV contract to give to the client for examination?
+    -   title: 'proofs'
+        prefix: 'trusted-cloud'
+        dataType: 'xsd:string' ## Todo controlled vocab check-box (!), union of controlled vocab and string
+        valueIn: [ 'Self-audit', 'Internal rules of conduct', 'Certificate', 'Approved rules of conduct acc. to Atr. 40 GDPR', 'Certificates acc. to Art. 42 GDPR', 'Others (free text)' ]
+        cardinality: '1..1'
+        description: 'Which of the following proofs can be provided to the contractor for review by appropriate means in accordace with the office for data privacy contract?'
+        exampleValues: [ 'Self-audit', 'Internal rules of conduct', 'Certificate', 'Approved rules of conduct acc. to Atr. 40 GDPR', 'Certificates acc. to Art. 42 GDPR', 'Others' ]
+
+    # 7.3.2 Is there a registry for the processing activities for the customer?
+    -   title: 'gdprArt40'
+        prefix: 'trusted-cloud'
+        dataType: 'xsd:boolean'
+        cardinality: '1..1'
+        description: 'Is a record of processing activities commissioned by the client based on Art. 30 GDPR?'
+        exampleValues: [ 'True', 'False' ]

@@ -1,0 +1,2 @@
+## The _gax-core_ folder
+This folder contains the classes described in [the Gaia-X Conceptual Model](https://gaia-x.gitlab.io/technical-committee/architecture-document//conceptual_model/) as per the [Gaia-X Architecture Document](https://docs.gaia-x.eu/technical-committee/architecture-document/latest/).

@@ -1,0 +1,25 @@
+@prefix sh: <http://www.w3.org/ns/shacl#> .
+@prefix gax-validation:  <http://w3id.org/gaia-x/validation#> .
+
+@prefix xsd: <http://www.w3.org/2001/XMLSchema#> .
+@prefix dct: <http://purl.org/dc/terms/> .
+@prefix dcat: <http://www.w3.org/ns/dcat#> .
+@prefix gax-core: <http://w3id.org/gaia-x/core#> .
+@prefix gax-node: <http://w3id.org/gaia-x/node#> .
+@prefix gax-resource: <http://w3id.org/gaia-x/resource#> .
+@prefix gax-participant: <http://w3id.org/gaia-x/participant#> .
+@prefix gax-service: <http://w3id.org/gaia-x/service#> .
+@prefix vcard: <http://www.w3.org/2006/vcard/ns#> .
+@prefix did: <https://www.w3.org/TR/did-core/#> .
+
+gax-validation:AbstractClassesShape
+	a sh:NodeShape ;
+	sh:targetClass gax-participant:Participant, gax-resource:Resource ;
+	sh:sparql [ sh:message "Abstract classes and are not allowed to be instanciated." ;
+			sh:select """
+			SELECT $this
+			WHERE {
+				{  { $this a gax-participant:Participant } UNION { $this a gax-resource:Resource }  }
+			}
+			""" ]
+.

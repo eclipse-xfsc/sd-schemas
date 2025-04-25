@@ -1,0 +1,29 @@
+ServiceAvailability:
+   subClassOf: []
+   prefix: 'trusted-cloud'
+   attributes:
+    # 8.3 Service availability
+    # 8.3.1 Assured service availability in percent per year
+    -   title: 'availability'
+        prefix: 'trusted-cloud'
+        dataType: 'xsd:string'
+        valueIn: [ '99%', '99.9%', '99.99%', '99.999%', '99.999%' ]
+        cardinality: '0..1'
+        description: 'Assured Service Availability in Percent / Year'
+        exampleValues: [ '99%', '99.9%', '99.99%', '99.999%', '99.999%' ]
+
+    # 8.3.2 Maximum downtime in hours
+    -   title: 'maximumDownTime'
+        prefix: 'trusted-cloud'
+        dataType: 'xsd:string' ## should be type measure, to be comparable
+        cardinality: '1..1'
+        description: 'Maximum downtime of the service in hours'
+        exampleValues: [ 'Freetext' ]
+
+    # 8.3.3 How is the service availability and data recovery after a technical problem guaranteed?
+    -   title: 'timeToRecover'
+        prefix: 'trusted-cloud'
+        dataType: 'xsd:string' ## should be type measure, to be comparable
+        cardinality: '1..1'
+        description: 'How is the quick recovery of availability of client data and access to it guarantieed in the event of a physical or technical incident?'
+        exampleValues: [ 'Freetext' ]

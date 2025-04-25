@@ -1,0 +1,20 @@
+CertificateScope:
+    # Details about certificates, which are relevant for this scope
+    subClassOf: []
+    prefix: 'trusted-cloud'
+    attributes:
+    # A.4.1.1 &  A.4.2.1 Certificate
+    -   title: 'certificate'
+        prefix: 'trusted-cloud'
+        dataType: 'trusted-cloud:Certificate'
+        cardinality: '1..1'
+        description: 'Reference to certificate, which is reelvant for this scope.'
+        exampleValues: [ '(DID of certificate VC)' ]
+
+     # A.4.1.3 & A.4.2.3 Test scope description
+    -   title: 'scope'
+        prefix: 'trusted-cloud'
+        dataType: 'xsd:string'
+        cardinality: '1..1'
+        description: 'Details about relevance of the certificate for this scope.'
+        exampleValues: [ 'Freetext' ]

@@ -1,0 +1,21 @@
+ClientIsolation:
+    subClassOf: []
+    prefix: 'trusted-cloud'
+    attributes:
+    # 10.1 Isolation
+    # 10.1.1 Is a complete tenant separation guaranteed?
+    -   title: 'clientSeparation'
+        prefix: 'trusted-cloud'
+        dataType: 'xsd:string'
+        valueIn: [ 'Not guaranteed', 'Guaranteed', 'Guaranteed and can be proven' ]
+        cardinality: '0..1'
+        description: 'Is a continuous client separation guaranteed?'
+        exampleValues: [ 'Not guaranteed', 'Guaranteed', 'Guaranteed and can be proven' ]
+
+    # 10.1.2 How is the tenant separation executed?
+    -   title: 'description'
+        prefix: 'trusted-cloud'
+        dataType: 'xsd:string'
+        cardinality: '0..1'
+        description: 'How does the client separation work?'
+        exampleValues: [ 'Freetext' ]

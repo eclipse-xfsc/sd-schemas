@@ -1,0 +1,5 @@
+SSOT_root_path,"../single-point-of-truth/yaml/"
+SSOT_validation_path,"../single-point-of-truth/yaml/validation"
+SSOT_to_be_integrated_path,"../single-point-of-truth/yaml/to-be-integrated"
+SSOT_schema,"../single-point-of-truth/yaml/validation/schema.json"
+SEMANTIC_VALIDATION_MANDATORY_ATTRIBUTES,"semantic_validation/mandatory_attributes.csv"

@@ -1,0 +1,20 @@
+FunctionalDescriptionService:
+ subClassOf: []
+ prefix: 'trusted-cloud'
+ attributes:
+    # A.2.2 Functional description of the service
+    # A.2.2.1 Functional Description of the service
+    -   title: 'description'
+        prefix: 'trusted-cloud'
+        cardinality: '1..1'  
+        dataType: 'xsd:string'
+        description: 'A short description in natural language to display on the query site.'
+        exampleValues: [ 'An ML service for training, deploying and improving image classifiers.' ]
+
+    # A.2.2.2 Brief functional description of the service
+    -   title: 'briefDescription'
+        prefix: 'trusted-cloud'
+        cardinality: '1..1'  
+        dataType: 'xsd:string'
+        description: 'Functional brief description of the service in reference to company demand.'
+        exampleValues: [ 'A brief description...' ]

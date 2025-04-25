@@ -1,0 +1,21 @@
+Encryption:
+    # 6.5 Encryption
+    subClassOf: []
+    prefix: 'trusted-cloud'
+    attributes:
+    # 6.5.1 Encryption types for data transmission and storage
+    -   title: 'encryptionTypesForDataTransmissionAndStorage'
+        prefix: 'trusted-cloud'
+        dataType: 'xsd:string'
+        cardinality: '1..1'
+        description: 'Encryption types that can be used to encrypt data for transmission and storage?'
+        exampleValues: [ 'Freetext' ]
+
+    # 6.5.2 Options for the key management
+    -   title: 'keyManagementOptions'
+        prefix: 'trusted-cloud'
+        dataType: 'xsd:string'
+        valueIn: [ 'Keys are set by the provider', 'Keys are set by the customer', 'Keys can be set by external services' ]
+        cardinality: '0..1'
+        description: 'Key management options'
+        exampleValues: [ 'Keys are set by the provider', 'Keys are set by the customer', 'Keys can be set by external services' ]

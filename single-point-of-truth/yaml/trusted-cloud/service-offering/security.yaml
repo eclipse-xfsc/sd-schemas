@@ -1,0 +1,66 @@
+Security:
+    # A.6 Security
+    subClassOf: []
+    prefix: 'trusted-cloud'
+    attributes:
+    # 6.1 Safety management
+    -   title: 'securityManagement'
+        prefix: 'trusted-cloud'
+        dataType: 'xsd:string'
+        valueIn: [ 'According to accepted procedure', 'Certified', 'Certified and checked regularly' ]
+        cardinality: '0..1'
+        description: 'Proof of efficient management of information security for example by certificates as per ISO 27001 or BSI?'
+        exampleValues: [ 'According to accepted procedure', 'Certified', 'Certified and checked regularly' ]
+
+    # 6.2.1 Description of processes to report data leaks
+    -   title: 'reportDataLeaks'
+        prefix: 'trusted-cloud'
+        dataType: 'xsd:string'
+        cardinality: '1..1'
+        description: 'Description of the process to report data leaks to the customer.'
+        exampleValues: [ 'Freetext' ]
+
+    # 6.3 Security certificates
+    -   title: 'certificates'
+        prefix: 'trusted-cloud'
+        dataType: 'trusted-cloud:CertificateScope'
+        cardinality: '0..*'
+        description: 'Details about certificates, which are relevant for security.'
+        exampleValues: [ '(a structured object of type Certificate' ]
+
+    # Certificates are mapped to VC, which are not refered here. Instead,
+    # 'credentialSubject' of certificate VC referes to provider's DID
+    #    -   title: 'securityCertificate'
+    #    prefix: 'trusted-cloud'
+    #    dataType: 'trusted-cloud-others:Certificate'
+    #    cardinality: '0..*'
+    #    description: 'Certificate name for the security certificate'
+    #    exampleValues: [ '(a structured object of type Certificate)' ]
+
+    # 6.4 Certification of the data center and technical infrastructure
+    # Certificates are mapped to VC, which are not refered here. Instead,
+    # 'credentialSubject' of certificate VC referes to provider's DID
+    #-   title: 'dataCenterCertificate'
+    #    prefix: 'trusted-cloud'
+    #    dataType: 'xsd:string'
+    #    cardinality: '0..*'
+    #    description: 'Certificate name for the data center or infrastructure certificate'
+    #    exampleValues: [ 'Freetext' ]
+
+    # 6.5 Encryption
+    -   title: 'encryption'
+        prefix: 'trusted-cloud'
+        dataType: 'trusted-cloud:Encryption'
+        cardinality: '1..*'
+        description: 'Information about used encryption techniques for encryption data transmission and storage.'
+        exampleValues: [ '(a structured object of type Encryption)' ]
+
+    # 6.6 Identity- and access management
+    # 6.6.1 Which rights- and role-concepts are used?
+    -   title: 'rightsAndRoleConcept'
+        prefix: 'trusted-cloud'
+        dataType: 'xsd:string'
+        valueIn: [ 'company-wide right- and role-concept', 'Others' ]
+        cardinality: '0..1'
+        description: 'Which rights- and role-concept are used?'
+        exampleValues: [ 'company-wide right- and role-concept', 'Others' ]

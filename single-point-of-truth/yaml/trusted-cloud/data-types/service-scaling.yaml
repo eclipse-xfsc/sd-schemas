@@ -1,0 +1,21 @@
+ServiceScaling:
+    subClassOf: []
+    prefix: 'trusted-cloud'
+    attributes:
+    # 10.2 Scaling
+    # 10.2.1 How are the scaling types and factors of the infrastructure defined?
+    -   title: 'scalingTypes'
+        prefix: 'trusted-cloud'
+        dataType: 'xsd:string'
+        valueIn: [ 'Not defined', 'Scaling types are defined', 'Scaling types are defined and assured by contract' ]
+        cardinality: '0..1'
+        description: 'Are the scales and factors of the technical infrastructure defined?'
+        exampleValues: [ 'Not defined', 'Scaling types are defined', 'Scaling types are defined and assured by contract' ]
+
+    # 10.2.2 More information about the defined scaling types
+    -   title: 'description'
+        prefix: 'trusted-cloud'
+        dataType: 'xsd:string'
+        cardinality: '1..1'
+        description: 'Description of defined scaling types'
+        exampleValues: [ 'Freetext' ]

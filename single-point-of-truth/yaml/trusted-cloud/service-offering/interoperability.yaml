@@ -1,0 +1,35 @@
+Interoperability:
+    subClassOf: []
+    prefix: 'trusted-cloud'
+    attributes:
+    # 9.1 Technical standards
+    -   title: 'technicalStandards'
+        prefix: 'trusted-cloud'
+        dataType: 'trusted-cloud:TechnicalStandards'
+        cardinality: '1..1'  
+        description: 'Information about technical standards the service stack is based on.'
+        exampleValues: [ '(a structured object of type TechnicalStandards)' ]
+
+    # 9.2 Data Export
+    -   title: 'dataExport'
+        prefix: 'trusted-cloud'
+        dataType: 'trusted-cloud:DataExport'
+        cardinality: '1..1'  
+        description: 'Representation of procedures of data access of customer data and data feedback.'
+        exampleValues: [ '(a structured object of type DataExport)' ]
+
+    # 9.3 Integration
+    -   title: 'technicalIntegration'
+        prefix: 'trusted-cloud'
+        dataType: 'trusted-cloud:TechnicalIntegration'
+        cardinality: '1..1'  
+        description: 'Description of procedures of techincal integration of service in the available IT-landscape of the user?'
+        exampleValues: [ '(a structured type of type Integration)' ]
+
+    # 9.4 Technical and organizational requirements for service usage
+    -   title: 'requirementsServiceUsage'
+        prefix: 'trusted-cloud'
+        dataType: 'trusted-cloud:RequirementsServiceUsage'
+        cardinality: '1..1'  
+        description: 'Description for the technical and organizational prerequisites to use the service the user has to fulill.'
+        exampleValues: [ '(a structured object of type RequirementsServiceUsage)' ]

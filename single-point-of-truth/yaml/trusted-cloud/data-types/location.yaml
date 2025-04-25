@@ -1,0 +1,18 @@
+Location:
+ subClassOf: []
+ prefix: 'trusted-cloud'
+ attributes:
+  - title: 'country-name'
+    prefix: 'trusted-cloud'
+    dataType: 'xsd:string' # TODO: provide list of contries
+    cardinality: '1..1'
+    description: 'Country data centre is located in.'
+    exampleValues: ['DE','DEU']
+
+  - title: 'state'
+    prefix: 'trusted-cloud'
+    dataType: 'xsd:string'
+    cardinality: '1..1'
+    description: 'State data centre is located in.'
+    exampleValues: ['Saxony']
+

@@ -1,0 +1,21 @@
+ServiceArchitecture:
+    # A.10 Service Architecture
+    subClassOf: []
+    prefix: 'trusted-cloud'
+    attributes:
+    # 10.1 Isolation
+    # 10.1.1 Is a complete tenant separation guaranteed?
+    -   title: 'clientIsolation'
+        prefix: 'trusted-cloud'
+        dataType: 'trusted-cloud:ClientIsolation'
+        cardinality: '1..1'  
+        description: 'Description of measures for limiting client areas for dedicated technical infrastructures and data areas.'
+        exampleValues: [ '(a structured object of type ClientIsolation)' ]
+
+    # 10.2 Scaling
+    -   title: 'scaling'
+        prefix: 'trusted-cloud'
+        dataType: 'trusted-cloud:ServiceScaling'
+        cardinality: '1..1'  
+        description: 'Information about scaling possibilities of technical infrastructure of the service.'
+        exampleValues: [ '(a structured object of type ServiceScaling)' ]

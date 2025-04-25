@@ -1,0 +1,25 @@
+OntologyDescription:
+  - name:  'a'
+    value: ['voaf:Vocabulary', 'owl:Ontology']
+  - name:  'rdfs:label'
+    value: '"Gaia-X trusted-cloud-participant Ontology"@en'
+  - name:  'dct:title'
+    value: '"Gaia-X trusted-cloud-participant Ontology"@en'
+  - name:  'dct:abstract'
+    value:  '"todo"'
+  - name:  'cc:license'
+    value: '<http://www.apache.org/licenses/LICENSE-2.0>'
+  - name: 'dct:creator'
+    value: '"Working Group Service Characteristics"'
+  - name:  'dct:contributor'
+    value: [ '"Akyürek, Haydar"', '"Bader, Sebastian"', '"Baum, Hannes"', '"Blanch, Josep"', '"Frömberg, Jan"', '"Gronlier, Pierre"', '"Hermsen, Felix"', '"Lange, Christoph"', '"Langkau, Jörg"', '"Leberecht, Markus"', '"Meinke, Kai"', '"Moosmann, Paul"', '"Niessen, Thomas"', '"Ogel, Frederic"', '"Ottradovetz, Klaus"', '"Qin, Chang"', '"Rubina, Alina"', '"Staginus, Judith"', '"Strunk, Anja"', '"Theissen-Lipp, Johannes"' ]
+  - name:  'dct:created'
+    value: '"2021-10-18T12:00:00+01:00"^^xsd:dateTimeStamp'
+  - name:  'owl:versionInfo'
+    value: '"22.04"'
+  - name:  'vann:preferredNamespaceUri'
+    value: '"http://w3id.org/gaia-x/trusted-cloud-participant#"'
+  - name:  'vann:preferredNamespacePrefix'
+    value: '"trusted-cloud-participant"'
+  - name:  'void:vocabulary '
+    value: ['vann:', 'void:', 'voaf:', 'dct:']

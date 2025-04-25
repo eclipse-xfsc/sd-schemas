@@ -1,0 +1,20 @@
+ServiceInterruptionRules:
+    subClassOf: []
+    prefix: 'trusted-cloud'
+    attributes:
+    # 5.4 Regulation on service interruption or insolvency
+    # 5.4.1 Is the access to customer data managed in the contract after bankruptcy or service interruption?
+    -   title: 'rulesContracted'
+        prefix: 'trusted-cloud'
+        dataType: 'xsd:boolean'
+        cardinality: '1..1'
+        description: 'Are clear rules provided which guarantee adequate data feedback in case of insolvency or special ending of contract or interruption of service provisioning.'
+        exampleValues: [ 'yes','no' ]
+
+    # 5.4.2
+    -   title: 'rulesDetails'
+        prefix: 'trusted-cloud'
+        dataType: 'xsd:string'
+        cardinality: '1..1'
+        description: 'Details about contractually ensured rules for feedback of customer data.'
+        exampleValues: [ 'Freetext' ]

@@ -1,0 +1,53 @@
+ServiceLevelAgreement:
+    subClassOf: []
+    prefix: 'trusted-cloud'
+    attributes:    
+    # 5.5 Service Level Agreements
+    # 5.5.1 Are SLAs a part of the contract?
+    -   title: 'hasSLAInContract'
+        prefix: 'gax-core'
+        dataType: 'xsd:boolean'
+        cardinality: '1..1'
+        description: 'Are there SLAs component of contract?'
+        # we need to handle this differently; see #295
+        exampleValues: [ 'Yes', 'No' ]
+
+    # 5.5.2 Can the SLA observance be checked by the customer?
+    -   title: 'slaComplianceReviewable'
+        prefix: 'trusted-cloud'
+        dataType: 'xsd:boolean'
+        cardinality: '1..1'
+        description: 'Is it possible to review the compliance with the SLA by the customer?'
+        exampleValues: [ 'True', 'False' ]
+
+    # 5.5.3 Description of the SLAs and test procedures
+    -   title: 'description'
+        prefix: 'trusted-cloud'
+        dataType: 'xsd:string'
+        cardinality: '0..*'
+        description: 'Description of the SLAs'
+        exampleValues: [ 'Freetext' ]
+
+    # 5.5.4 Are the legal consequences for the SLA violation written in the contract?
+    -   title: 'slaViolationConcequencesContracted'
+        prefix: 'trusted-cloud'
+        dataType: 'xsd:boolean'
+        cardinality: '1..1'
+        description: 'Are there legal consequences for an SLA violation in the contract?'
+        exampleValues: [ 'True', 'False' ]
+
+    # 5.5.5 Is a continuous guarantee of privacy written in the contract?
+    -   title: 'continuousGuaranteeOfPrivacy'
+        prefix: 'trusted-cloud'
+        dataType: 'xsd:boolean'
+        cardinality: '1..1'
+        description: 'Is there a contracted continuous guarantee of privacy, integrity and resilience of the systems?'
+        exampleValues: [ 'True', 'False' ]
+
+    # 5.5.6 Are data availability and recovery after technical problems written into the contract?
+    -   title: 'contractedAvailabilityForDataAfterTechnicalProblems'
+        prefix: 'trusted-cloud'
+        dataType: 'xsd:boolean'
+        cardinality: '1..1'
+        description: 'Are there contracted availabilities for data after a physical or technical problem?'
+        exampleValues: [ 'True', 'False' ]

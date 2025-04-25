@@ -1,0 +1,16 @@
+CertificationBody:
+ subClassOf: []
+ prefix: 'trusted-cloud'
+ attributes:
+  - title: 'name'
+    prefix: 'trusted-cloud'
+    dataType: 'xsd:string'
+    cardinality: '1..1'
+    description: 'Name of the company.'
+    exampleValues: ['TÜV Süd']
+  - title: 'address'
+    prefix: 'vcard'
+    dataType: 'xsd:address'
+    cardinality: '1..1'
+    description: 'Address of the certification body.'
+    exampleValues: [ '(ACME street 1, 12345 city, Germany)' ]

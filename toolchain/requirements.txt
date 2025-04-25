@@ -1,0 +1,7 @@
+rdflib==6.0.2
+rdflib-jsonld==0.6.2
+colorama==0.4.4
+pyshacl==0.17.2
+requests==2.24.0
+PyYAML==6.0
+pytz==2021.1

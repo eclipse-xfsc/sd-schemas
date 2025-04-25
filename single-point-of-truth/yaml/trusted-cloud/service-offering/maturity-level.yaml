@@ -1,0 +1,22 @@
+MaturityLevel:
+    # A.2.3 Details on scope of service usage
+    subClassOf: []
+    prefix: 'trusted-cloud'
+    attributes:
+    # A.2.3.1 Number of Customers
+    -   title: 'numberOfCustomers'
+        prefix: 'trusted-cloud'
+        dataType: 'xsd:integer'
+        minValue: '1'
+        cardinality: '0..1'
+        description: 'Number of customers who use the service.'
+        exampleValues: [ '5' ]
+
+    # A.2.3.2 Number of overall users
+    -   title: 'numberOfUsers'
+        prefix: 'trusted-cloud'
+        dataType: 'xsd:integer'
+        minValue: '1'
+        cardinality: '0..1'
+        description: 'Number of overall users who use the service.'
+        exampleValues: [ '10' ]

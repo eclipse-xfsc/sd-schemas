@@ -1,0 +1,53 @@
+Agent:
+ subClassOf: []
+ prefix: 'vcard'
+ attributes:
+  - title: 'given-name'
+    prefix: 'vcard'
+    dataType: 'xsd:string'
+    cardinality: '1..1'
+    description: 'The v:given-name property specifies the given name part of a persons name.'
+    exampleValues: ['example-given-name']
+  - title: 'family-name'
+    prefix: 'vcard'
+    dataType: 'xsd:string'
+    cardinality: '1..1'
+    description: 'The v:family-name property specifies the family name part of a persons name.'
+    exampleValues: [ 'example-family-name' ]
+  - title: 'nickname'
+    prefix: 'vcard'
+    dataType: 'xsd:string'
+    cardinality: '0..1'
+    description: 'The v:nickname property specifies the nickname of a person.'
+    exampleValues: [ 'example-nickname' ]
+  - title: 'position'
+    prefix: 'vcard'
+    dataType: 'xsd:string'
+    cardinality: '0..1'
+    description: 'The v:position property specifies the position of a person.'
+    exampleValues: [ 'example-nickname' ]
+  - title: 'email'
+    prefix: 'vcard'
+    dataType: 'xsd:anyURI'
+    cardinality: '1..1'
+    description: 'The v:email property specifies an email address.'
+    exampleValues: [ 'example-Email' ]
+  - title: 'tel'
+    prefix: 'vcard'
+    dataType: 'xsd:string'
+    cardinality: '1..1'
+    description: 'The v:tel property specifies a telefon number.'
+    exampleValues: [ '+49 030 12324567' ]
+  - title: 'image'
+    prefix: 'vcard'
+    dataType: 'xsd:string'
+    cardinality: '0..1'
+    description: 'The v:image property specifies an image a person.'
+    exampleValues: [ '+49 030 12324567' ]
+
+  - title: 'address'
+    prefix: 'vcard'
+    dataType: 'xsd:string'
+    cardinality: '0..1'
+    description: 'The v:address property specifies the address of a person.'
+    exampleValues: [ '(ACME street 1, 12345 city, Germany)' ]

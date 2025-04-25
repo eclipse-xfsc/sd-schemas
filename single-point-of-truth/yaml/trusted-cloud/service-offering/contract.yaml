@@ -1,0 +1,83 @@
+Contract:
+    subClassOf: []
+    prefix: 'trusted-cloud'
+    attributes:
+    # 5.1 Contract Transparency
+    -   title: 'contractTransparency'
+        prefix: 'trusted-cloud'
+        dataType: 'trusted-cloud:ContractTransparency'
+        cardinality: '1..1'
+        description: 'Information about general contract transparency.'
+        exampleValues: [ '(a structured object of type ContractTransparency.' ]
+
+    # 5.2 Usage rights
+    -   title: 'rightsOfUsage'
+        prefix: 'trusted-cloud'
+        dataType: 'trusted-cloud:UsageRights'
+        cardinality: '1..1'
+        description: 'Details about rights of usage and area of juristication.'
+        exampleValues: [ '(a structured object of type UsageRights.' ]
+
+    # 5.3 Transparency with subcontractors
+    -   title: 'transparencyWithSubcontractors'
+        prefix: 'trusted-cloud'
+        dataType: 'trusted-cloud:SubcontractorTransparency'
+        cardinality: '1..1'
+        description: 'Name all concerd subcontractors and agreements for change during duration of service provision as well as commitment on data privacy information.'
+        exampleValues: [ '(a structured object of type SubcontractorTransparency.' ]
+
+    # 5.4 Interruption rules
+    -   title: 'interruptionRules'
+        prefix: 'trusted-cloud'
+        dataType: 'trusted-cloud:ServiceInterruptionRules'
+        cardinality: '1..1'
+        description: 'Details about rules which guarantee data feedback at any time.'
+        exampleValues: [ '(a structured object of type SubcontractorTransparency.' ]
+
+    # 5.5 Service Level Agreements
+    -   title: 'sla'
+        prefix: 'trusted-cloud'
+        dataType: 'trusted-cloud:ServiceLevelAgreement'
+        cardinality: '1..1'
+        description: 'Information of Service Level Agreements (SLA) and rules for SLA-violation.'
+        exampleValues: [ '(a structured object of type ServiceLevelAgreement.' ]
+
+    # 5.6 Pricing Model
+    -   title: 'pricingModel'
+        prefix: 'trusted-cloud'
+        dataType: 'trusted-cloud:PricingModel'
+        cardinality: '1..1'
+        description: 'Information about used price model, contracted duration and notive of cancellation.'
+        exampleValues: [ '(a structured object of type PricingModel.' ]
+
+    # 5.7 Change Managenent
+    -   title: 'changeManagement'
+        prefix: 'trusted-cloud'
+        dataType: 'trusted-cloud:ChangeManagement'
+        cardinality: '1..1'
+        description: 'Information of contractural rules for handeling changes.'
+        exampleValues: [ '(a structured object of type ChangeManagement.' ]
+
+    # 5.8 Obligation to cooperate and provision of the customer
+    -   title: 'obligationToCooperateInContract'
+        prefix: 'trusted-cloud'
+        dataType: 'xsd:boolean'
+        cardinality: '1..1'
+        description: 'Are all obligations to cooperate or provisions defined in the contract?'
+        exampleValues: [ 'True', 'False' ]
+
+    # 5.9 Copyright and rights of use
+    -   title: 'customerExemptionFromClaimsOfThirdParties'
+        prefix: 'trusted-cloud'
+        dataType: 'xsd:boolean'
+        cardinality: '1..1'
+        description: 'Is the customer exempt from all claims of third parties while using this service?'
+        exampleValues: [ 'True', 'False' ]
+
+    # 5.10 Exit Support
+    -   title: 'exitSupport'
+        prefix: 'trusted-cloud'
+        dataType: 'trusted-cloud:ExitSupport'
+        cardinality: '1..1'
+        description: 'Information about rules for exit support (Exit-Management), especially the adjusted feedback for customer data.'
+        exampleValues: [ '(a structured object of type ExitSupport.' ]

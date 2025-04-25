@@ -1,0 +1,28 @@
+UsageRights:
+    subClassOf: []
+    prefix: 'trusted-cloud'
+    attributes:
+    # 5.2 Applicable law and jurisdiction
+    # 5.2.1 Applicable law
+    -   title: 'applicableLaw'
+        prefix: 'trusted-cloud'
+        dataType: 'xsd:string'
+        valueIn: [ 'German contact Law', 'EU Contract Law' ]
+        cardinality: '0..1'
+        description: 'Is there applicable law?'
+        exampleValues: [ 'German contract law', 'EU contract law' ]
+
+    -   title: 'applicableEULaw'
+        prefix: 'trusted-cloud'
+        dataType: 'xsd:string'
+        cardinality: '0..1'
+        description: 'If applicable law is EU law, this field has to specify the concrete law.'
+        exampleValues: [ '' ]
+
+    # 5.2.2 Jurisdiction
+    -   title: 'jurisdiction'
+        prefix: 'trusted-cloud'
+        dataType: 'xsd:string'
+        cardinality: '0..1'
+        description: 'City of jurisdiction of the service'
+        exampleValues: [ 'Berlin' ]

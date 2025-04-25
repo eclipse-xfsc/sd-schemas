@@ -1,0 +1,36 @@
+ReferenceProfile:
+    # A.2.4 Information on reference customer and use cases of a service
+    subClassOf: []
+    prefix: 'trusted-cloud'
+    attributes:
+    # A.2.4.1
+    -   title: 'customerName'
+        prefix: 'trusted-cloud'
+        dataType: 'xsd:string'
+        cardinality: '0..1'
+        description: 'Name of reference customer who is using the service?'
+        exampleValues: [ 'AMCE GmbH' ]
+
+    # A.2.4.2
+    -   title: 'usage'
+        prefix: 'trusted-cloud'
+        dataType: 'xsd:string'
+        cardinality: '0..1'
+        description: 'Description of usage of service by this customer.'
+        exampleValues: [ '' ]
+
+    # A.2.4.3
+    -   title: 'contact'
+        prefix: 'trusted-cloud'
+        dataType: 'vcard:Agent'
+        cardinality: '0..1'
+        description: 'Contact person of this reference.'
+        exampleValues: [ '(Jane Mustermann, jane.mustermann@acme.com, +49 030 123456789)' ]
+
+    # A.2.4.4
+    -   title: 'url'
+        prefix: 'trusted-cloud'
+        dataType: 'xsd:anyURI'
+        cardinality: '0..1'
+        description: 'URL of the customer.'
+        exampleValues: [ 'www.my-customer.com' ]

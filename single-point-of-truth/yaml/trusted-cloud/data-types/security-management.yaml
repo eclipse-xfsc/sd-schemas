@@ -1,0 +1,21 @@
+SecurityManagement:
+    subClassOf: []
+    prefix: 'trusted-cloud'
+    attributes:
+    # 6.1 Security management
+    # 6.1.1 Is there efficient information safety management?
+    -   title: 'hasEfficientManagement'
+        prefix: 'trusted-cloud'
+        dataType: 'xsd:string'
+        valueIn: [ 'According to accepted procedure', 'Certified', 'Certified and checked regularly' ]
+        cardinality: '0..1'
+        description: 'Is there an efficient management for information safety given, e.g. certification according to ISO 27001?'
+        exampleValues: [ 'According to accepted procedure', 'Certified', 'Certified and checked regularly' ]
+
+    # 6.1.2 More details about the process
+    -   title: 'detailsAboutProcess'
+        prefix: 'trusted-cloud'
+        dataType: 'xsd:string'
+        cardinality: '1..1'
+        description: 'More details about the process in the IT safety management'
+        exampleValues: [ 'Freetext' ]

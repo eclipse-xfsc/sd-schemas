@@ -1,0 +1,20 @@
+DataSubjectRights:
+ subClassOf: []
+ prefix: 'trusted-cloud'
+ attributes:
+    # 7.5 Implementation of data subject rights
+    # 7.5.1 How is it guaranteed, that the requirements of the DSGVO for data subject rights are met?
+    -   title: 'guaranteeForImplementationOfDataSubjectRights'
+        prefix: 'trusted-cloud'
+        dataType: 'xsd:string'
+        cardinality: '1..1'
+        description: 'How can the requirements of the GDPR according to data subject rights be fulfilled, e.g. the deletion of personal data?'
+        exampleValues: [ 'Freetext' ]
+
+    # 7.5.2 How is deletion of data and data links guaranteed after the contract is finished?
+    -   title: 'guaranteeToDeleteLinksToCustomerData'
+        prefix: 'trusted-cloud'
+        dataType: 'xsd:string'
+        cardinality: '1..1'
+        description: 'How can it be guaranteed, that also links get deleted, if the data is removed?'
+        exampleValues: [ 'Freetext' ]

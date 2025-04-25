@@ -1,0 +1,59 @@
+ProviderCompanyProfile:
+ # 3.2 Company Profile
+ subClassOf: []
+ prefix: 'trusted-cloud'
+ attributes:
+
+ # A.1.2.1 Number of employees
+ -  title: 'employeeCount'
+    prefix: 'trusted-cloud'
+    dataType: 'xsd:integer'
+    minValue: '1'
+    cardinality: '1..1'
+    description: 'Employee count of the organization.'
+    exampleValues: [ '50']
+
+ # A.1.2.2
+ -  title: 'employeeCountForCloudServices'
+    prefix: 'trusted-cloud'
+    dataType: 'xsd:integer'
+    minValue: '1'
+    cardinality: '1..1'
+    description: 'Employee count of the organization in the cloud service area.'
+    exampleValues: [ '50' ]
+
+ # A.1.2.3 & A.3.2.2 Sales volume
+ -  title: 'salesVolume'
+    prefix: 'trusted-cloud'
+    dataType: 'xsd:integer'
+    minValue: '1'
+    cardinality: '1..1'
+    description: 'Sales volume of the organization.'
+    exampleValues: [ '50.000.000' ]
+
+ # A.1.2.4 Company category
+ -  title: 'category'
+    prefix: 'trusted-cloud'
+    dataType: 'xsd:string'
+    valueIn: [ 'Reseller', 'Internet Service Provider', 'Cloud Service Provider', 'Others' ]
+    cardinality: '1..1'
+    description: 'Specific category of the organization.'
+    exampleValues: [ 'Reseller', 'Internet Service Provider', 'Cloud Service Provider', 'Others' ]
+
+ # A.1.2.5 Publicly offered cloud services
+ -  title: 'numberOfPublicCloudServices'
+    prefix: 'trusted-cloud'
+    dataType: 'xsd:integer'
+    minValue: '1'
+    cardinality: '1..1'
+    description: 'Publicly offered cloud services.'
+    exampleValues: [ '5', '10' ]
+
+ # A.1.2.6 Experience level of the cloud services
+ -  title: 'experienceCloudServices'
+    prefix: 'trusted-cloud'
+    dataType: 'xsd:string'
+    valueIn: [ '<1 year', '1-5 year', '>5 year' ]
+    cardinality: '0..1'
+    description: 'Experience / knowledge of the organization in the cloud service business.'
+    exampleValues: [ '<1 year', '1-5 year', '>5 year' ]

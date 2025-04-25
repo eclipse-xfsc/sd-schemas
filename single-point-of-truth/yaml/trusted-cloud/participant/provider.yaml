@@ -1,0 +1,44 @@
+Provider:
+    # A1 Provider
+    subClassOf: ['gax-core:Participant']
+    prefix: 'trusted-cloud'
+    attributes:
+    # A.1.1 Legal Information (VC)
+    -   title: 'legalInformation'
+        prefix: 'trusted-cloud'
+        dataType: 'trusted-cloud:ProviderLegalInformation'
+        cardinality: '1..1'
+        description: 'Legal information of provider.'
+        exampleValues: [ 'DID to Verifiable credential of legal information of the provider.' ]
+
+    # A.1.2 Company Profile (VC)
+    -   title: 'companyProfile'
+        prefix: 'trusted-cloud'
+        dataType: 'trusted-cloud:ProviderCompanyProfile'
+        cardinality: '1..1'
+        description: 'Details on experience / knowledge of the company in the cloud service business.'
+        exampleValues: [ '(DID to Verifiable credential of company profile of the organization)' ]
+
+    # A.1.3 Auditability (VC)
+    -   title: 'auditabilityProfile'
+        prefix: 'trusted-cloud'
+        dataType: 'trusted-cloud:AuditabilityProfile'
+        cardinality: '1..1'
+        description: 'Details on auditability possibilities of the organization.'
+        exampleValues: [ '(DID to Verifiable credential of auditability profile of the organization' ]
+
+    # A.4 Certificates
+    # Certificates are mapped to VC, which are not refered here. Instead,
+    # 'credentialSubject' of certificate VC referes to provider's DID
+    #-   title: 'certificates'
+    #    prefix: 'trusted-cloud'
+    #    dataType: 'trusted-cloud:Certificate'
+    #    cardinality: '1..1'
+    #    description: 'Details on certificates of provider.'
+    #    exampleValues: [ '(a structured object of type Certificate' ]
+
+
+
+
+
+

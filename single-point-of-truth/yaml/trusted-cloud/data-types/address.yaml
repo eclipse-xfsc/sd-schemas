@@ -1,0 +1,31 @@
+Address:
+ subClassOf: []
+ prefix: 'vcard'
+ attributes:
+  - title: 'street-address'
+    prefix: 'vcard'
+    dataType: 'xsd:string'
+    cardinality: '1..1'
+    description: 'The v:street-address property specifies the street address of a postal address.'
+    exampleValues: ['example-street']
+  - title: 'number'
+    prefix: 'vcard'
+    dataType: 'xsd:integer'
+    minValue: '1'
+    cardinality: '1..1'
+    description: 'The v:number property specifies the street number of a postal address.'
+    exampleValues: ['5']
+  - title: 'postal-code'
+    prefix: 'vcard'
+    dataType: 'xsd:string'
+    cardinality: '1..1'
+    description: 'String of a street-address'
+    exampleValues: [ '12345' ]
+  - title: 'country-name'
+    prefix: 'vcard'
+    dataType: 'xsd:string'
+    cardinality: '1..1'
+    description: 'Physical location of head quarter in ISO 3166-1 alpha2, alpha-3 or numeric format.'
+    exampleValues: ['DE','DEU']
+
+

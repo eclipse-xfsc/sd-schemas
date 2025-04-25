@@ -1,0 +1,30 @@
+EmployeesCommitmentDataStrategy:
+ subClassOf: []
+ prefix: 'trusted-cloud'
+ attributes:
+    # 7.4 Location of the data management
+    # 7.4.1 Can the hosting of customer data be restricted to a specific region?
+    -   title: 'customDataHostingRestrictable'
+        prefix: 'trusted-cloud'
+        dataType: 'xsd:string'
+        valueIn: [ 'No restriction', 'Restriction to a region', 'Restriction to the EU', 'Restriction to Germany' ]
+        cardinality: '0..1'
+        description: 'Can the hosting of customer data be restricted to a specific location?'
+        exampleValues: [ 'No restriction', 'Restriction to a region', 'Restriction to the EU', 'Restriction to Germany' ]
+
+    # 7.4.2 Can the customer data administration be restricted by the provider to a specific location?
+    -   title: 'customDataAdminstrationRestrictable'
+        prefix: 'trusted-cloud'
+        dataType: 'xsd:string'
+        valueIn: [ 'No restriction', 'Restriction to a region', 'Restriction to the EU', 'Restriction to Germany' ]
+        cardinality: '0..1'
+        description: 'Can the administration of customer data be restricted to a specific location?'
+        exampleValues: [ 'No restriction', 'Restriction to a region', 'Restriction to the EU', 'Restriction to germany' ]
+
+    # 7.4.3 Options for the GEO regions
+    -   title: 'geoRegionOptions'
+        prefix: 'trusted-cloud'
+        dataType: 'xsd:string'
+        cardinality: '1..1'
+        description: 'Detailed information for options of GEO-regions.'
+        exampleValues: [ 'Freetext' ]

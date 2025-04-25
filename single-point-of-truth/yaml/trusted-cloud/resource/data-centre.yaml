@@ -1,0 +1,28 @@
+DataCentre:
+    # A3 Data Centres
+    subClassOf: ['gax-core:Resource'] # cloud also be subclass of physical resource
+    prefix: 'trusted-cloud'
+    attributes:
+    -   title: 'operatedBy'
+        prefix: 'trusted-cloud'
+        dataType: 'trusted-cloud:SubContractor' # TODO: Union of SubContractor or DataCentre
+        cardinality: '1..1'
+        description: 'DID of datacenter subcontractor.'
+        exampleValues: [ '' ]
+
+    # A.3.1.5 Geographic location of the data center
+    -   title: 'geoLocation'
+        prefix: 'trusted-cloud'
+        dataType: 'trusted-cloud:Location'
+        cardinality: '1..1'
+        description: 'Geographical location of dat centre.'
+        exampleValues: [ '' ]
+
+    # Certificates are mapped to VC, which are not refered here. Instead,
+    # 'credentialSubject' of certificate VC referes to provider's DID
+    #-   title: 'certificates'
+    #    prefix: 'trusted-cloud'
+    #    dataType: 'trusted-cloud:Certificate'
+    #    cardinality: '0..*'
+    #    description: 'Details of certificates of this organization.'
+    #    exampleValues: [ '(a structure object of type Certificates)' ]

@@ -1,0 +1,50 @@
+SubcontractorCompanyProfile:
+ # 3.2 Company Profile
+ subClassOf: []
+ prefix: 'trusted-cloud' #
+ attributes:
+
+ # A.3.2.1 Number of employees
+ -  title: 'employeeCount'
+    prefix: 'trusted-cloud'
+    dataType: 'xsd:integer'
+    minValue: '1'
+    cardinality: '0..1'
+    description: 'Employee count of the organization.'
+    exampleValues: [ '50', 'No specification' ]
+
+ # A.3.2.2 Sales volume
+ -  title: 'salesVolume'
+    prefix: 'trusted-cloud'
+    dataType: 'xsd:integer'
+    minValue: '1'
+    cardinality: '0..1'
+    description: 'Sales volume of the organization.'
+    exampleValues: [ '50.000.000' ]
+
+ # A.3.2.3 Category of company
+ -  title: 'category'
+    prefix: 'trusted-cloud'
+    dataType: 'xsd:string'
+    valueIn: [ 'Reseller', 'ISV', 'CSP', 'others' ]
+    cardinality: '1..1'
+    description: 'Sales volume of the organization.'
+    exampleValues: [ 'Reseller', 'ISV', 'CSP', 'others' ]
+
+ # A.3.2.4 Number of Publicly offered cloud services
+ -  title: 'numberOfPublicCloudServices'
+    prefix: 'trusted-cloud'
+    dataType: 'xsd:integer'
+    minValue: '1'
+    cardinality: '0..1'
+    description: 'Publicly offered cloud services.'
+    exampleValues: [ '5', '10' ]
+
+ # A.3.2.5 Experience level of the cloud services
+ -  title: 'experienceCloudServices'
+    prefix: 'trusted-cloud'
+    dataType: 'xsd:string'
+    valueIn: [ '< 1 years', '1-5 years', '> 5 years'  ]
+    cardinality: '0..1'
+    description: 'Experience / knowledge of the organization in the cloud service business.'
+    exampleValues: [ '< 1 years', '1-5 years', '> 5 years' ]

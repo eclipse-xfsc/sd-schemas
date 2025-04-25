@@ -1,0 +1,22 @@
+SubcontractorTransparency:
+    subClassOf: []
+    prefix: 'trusted-cloud'
+    attributes:
+    # 5.3 Transparency of subcontractors
+    # 5.3.1 Are all subcontractors mentioned?
+    -   title: 'allSubContractorsMentioned'
+        prefix: 'trusted-cloud'
+        dataType: 'xsd:string'
+        valueIn: [ 'On request', 'Yes' ]
+        cardinality: '0..1'
+        description: 'Are all concerned subcontractors specified in the service provisioning?'
+        exampleValues: [ 'On request', 'Yes' ]
+
+    # 5.3.2 Are all contract conditions met by the subcontractor?
+    -   title: 'allContractConditionsMetBySubContractor'
+        prefix: 'trusted-cloud'
+        dataType: 'xsd:string'
+        valueIn: [ 'Sub contractors oblige', 'Sub contractors are bound by contract' ]
+        cardinality: '0..1'
+        description: 'Are all contract conditions transferable to the sub contractors are adhered by these contractually?'
+        exampleValues: [ 'Sub contractors oblige', 'Sub contractors are bound by contract' ]

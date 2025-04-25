@@ -1,0 +1,29 @@
+SubContractor:
+    # A.3 SubContractors
+    subClassOf: []
+    prefix: 'trusted-cloud'
+    attributes:
+    # A.3.1.1 - A.3.1.8 Legal Information
+    -   title: 'legalInformation'
+        prefix: 'trusted-cloud'
+        dataType: 'trusted-cloud:SubContractorLegalInformation'
+        cardinality: '1..1'
+        description: 'Legal information of sub contractor.'
+        exampleValues: [ '' ]
+
+    # A.3.2 Organization Profile
+    -   title: 'organizationProfile'
+        prefix: 'trusted-cloud'
+        dataType: 'trusted-cloud:SubcontractorCompanyProfile'
+        cardinality: '1..1'
+        description: 'Details on experience / knowledge of the organization in the cloud service business.'
+        exampleValues: [ '(a structure object of type SubcontractorCompanyProfile' ]
+
+    # 3.1.6 Is it an independent company?
+    -   title: 'independentSubCompany'
+        prefix: 'trusted-cloud'
+        dataType: 'xsd:string'
+        valueIn: [ 'Company internal', 'Company legally sovereign' ]
+        cardinality: '1..1'
+        description: 'Is the sub contractor internal or his legally sovereign company?'
+        exampleValues: [ 'Company internal', 'Company legally sovereign' ]

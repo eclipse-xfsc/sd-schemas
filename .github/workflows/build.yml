@@ -1,0 +1,213 @@
+name: CI/CD Workflow
+
+on:
+  push:
+    branches:
+      - main
+  pull_request:
+  workflow_dispatch:
+  release:
+    types: [published]
+
+jobs:
+  checkout:
+    name: Checkout Repository
+    runs-on: ubuntu-latest
+    steps:
+      - name: Checkout
+        uses: actions/checkout@v4
+        with:
+          submodules: recursive
+
+  check-yaml-syntax:
+    name: Check YAML Syntax
+    needs: checkout
+    runs-on: ubuntu-latest
+    container: node:15-buster
+    steps:
+      - name: Install ajv-cli
+        run: npm install -g ajv-cli
+
+      - name: Validate YAML Files
+        run: |
+          for filepath in $(find single-point-of-truth/yaml -maxdepth 2 -type f -name "*.yaml"); do
+            if [[ $filepath != *"validation"* ]] && [[ $filepath != *"to-be-integrated"* ]]; then
+              echo ${filepath}
+              ajv test -s single-point-of-truth/yaml/validation/schema.json -d $filepath --valid
+            fi
+          done
+
+  check-yaml-semantic:
+    name: Check YAML Semantic
+    needs: checkout
+    runs-on: ubuntu-latest
+    container: python:3-buster
+    steps:
+      - name: Setup Python Requirements
+        run: |
+          mkdir -p semantic_allYaml/
+          mkdir -p allYaml/
+          cd toolchain
+          pip install -Ur requirements.txt
+
+      - name: Semantic Validation
+        run: |
+          python3 semantic_validation/cli.py semantic-validation -e 'gax-core' -e 'gax-trust-framework' --srcFile 'pathFile.csv'
+          python3 semantic_validation/cli.py semantic-validation -e 'gax-core' -e 'trusted-cloud' --srcFile 'pathFile.csv'
+
+  preprocessing:
+    name: Automatic Translation
+    needs: checkout
+    runs-on: ubuntu-latest
+    container: python:3-buster
+    steps:
+      - name: Setup Translation Tools
+        run: |
+          mkdir -p preprocessed_yaml/
+          cd toolchain
+          pip install -Ur requirements.txt
+          pip install ruamel.yaml googletrans==4.0.0-rc1
+
+      - name: Translate Tooltips
+        run: |
+          python3 language_preprocessing/cli.py language_translator -s 'pathFile.csv' -e 'trusted-cloud' -e 'gax-core' -e 'gax-trust-framework' -l 'de' -l 'en' -t "../preprocessed_yaml/"
+
+  build-shacl:
+    name: Create SHACL Shapes
+    needs: [check-yaml-semantic]
+    runs-on: ubuntu-latest
+    container: python:3-buster
+    steps:
+      - name: Build SHACL
+        run: |
+          mkdir -p yaml2shacl/
+          cd toolchain
+          pip install -Ur requirements.txt
+          python3 yaml2shacl.py gax-core gax-trust-framework trusted-cloud
+          python3 constraintIndex.py
+
+  build-ontology:
+    name: Create Ontology
+    needs: [check-yaml-semantic]
+    runs-on: ubuntu-latest
+    container: python:3-buster
+    steps:
+      - name: Build Ontology
+        run: |
+          mkdir -p yaml2ontology/
+          cd toolchain
+          pip install -Ur requirements.txt
+          python3 ontology_generation/cli.py ontology-generation --srcFile pathFile.csv --dstPath ../yaml2ontology/ -e gax-core -e trusted-cloud -e gax-trust-framework
+
+  validate-shacl:
+    name: Validate RDF against SHACL
+    needs: [build-shacl]
+    runs-on: ubuntu-latest
+    container: python:3-buster
+    steps:
+      - name: Validate SHACL
+        run: |
+          cd toolchain
+          pip install -Ur requirements.txt
+          python3 check_shacl.py gax-core gax-trust-framework trusted-cloud
+
+  generate-uml:
+    name: Generate UML from SHACL
+    needs: [build-shacl]
+    runs-on: ubuntu-latest
+    container: ruby:2.7
+    steps:
+      - name: Install Dependencies
+        run: |
+          apt-get update
+          apt-get install -y default-jdk zip unzip graphviz
+          wget https://github.com/sparna-git/shacl-play/releases/download/0.5/shacl-play-app-0.5-onejar.jar -O shacl-play.jar
+      - name: Generate UML
+        run: |
+          mkdir -p shacl2uml
+          for filename in yaml2shacl/*.ttl; do
+            java -jar shacl-play.jar draw -i "$filename" -o "shacl2uml/$(basename "$filename" .ttl).png"
+          done
+
+  generate-visualization:
+    name: Generate Visualization for Samples
+    needs: checkout
+    runs-on: ubuntu-latest
+    container: node:15-buster
+    steps:
+      - name: Build Visualization
+        run: |
+          cd toolchain/visualization
+          chmod +x build.sh
+          ./build.sh
+
+  generate-widoco:
+    name: Generate WIDoCO Documentation
+    needs: checkout
+    runs-on: ubuntu-latest
+    container: ruby:2.7
+    steps:
+      - name: Setup Widoco
+        run: |
+          apt-get update
+          apt-get install -y zip unzip
+      - name: Generate Documentation
+        run: |
+          . toolchain/create_widoco_doc.sh
+
+  package-artifacts:
+    name: Package Artifacts
+    needs: [build-shacl, generate-widoco]
+    runs-on: ubuntu-latest
+    container: bash
+    steps:
+      - name: Package Artifacts
+        run: |
+          apk add curl
+          mkdir -p shaclPackage/gax-core shaclPackage/gax-trust-framework
+          cp -r yaml2shacl/gax-core/* shaclPackage/gax-core/
+          cp -r yaml2shacl/gax-trust-framework/* shaclPackage/gax-trust-framework/
+          tar -czvf shaclPackage/shacl.tar.gz shaclPackage
+
+          mkdir -p widocoPackage/gax-core widocoPackage/gax-trust-framework
+          cp -r widoco/gax-core/* widocoPackage/gax-core/
+          cp -r widoco/gax-trust-framework/* widocoPackage/gax-trust-framework/
+          tar -czvf widocoPackage/documentation.tar.gz widocoPackage
+
+  build-pages:
+    name: Build Pages
+    needs: [generate-uml, generate-visualization, generate-widoco]
+    runs-on: ubuntu-latest
+    container: python:3-bullseye
+    steps:
+      - name: Setup Pages
+        run: |
+          apt-get update && apt-get install -y zip
+          git submodule update --recursive --remote
+          pip install -Ur requirements.txt
+          pip install gxTrustFrameworkSPoT --extra-index-url https://gitlab.com/api/v4/projects/38506401/packages/pypi/simple --force
+          cp -r gaia-x-document-template/template_html/extra.css documentation/
+          cp -r gaia-x-document-template/template_html/extra.js documentation/
+
+      - name: Generate HTML
+        run: |
+          test -f generate_html_custom.sh && bash ./generate_html_custom.sh
+          j2 mkdocs.yml.j2 > mkdocs.yml
+          sed -i 's/docs_dir:\ docs/docs_dir:\ documentation/g' mkdocs.yml
+          mkdocs build
+
+      - name: Upload Pages
+        uses: actions/upload-pages-artifact@v1
+        with:
+          path: public
+
+  deploy-pages:
+    name: Deploy GitHub Pages
+    needs: build-pages
+    runs-on: ubuntu-latest
+    permissions:
+      pages: write
+      id-token: write
+    steps:
+      - name: Deploy to GitHub Pages
+        uses: actions/deploy-pages@v1

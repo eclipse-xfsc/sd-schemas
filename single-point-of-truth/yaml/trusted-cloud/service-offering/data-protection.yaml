@@ -1,0 +1,65 @@
+DataProtection:
+    subClassOf: []
+    prefix: 'trusted-cloud'
+    attributes:
+    # 7.1 Data protection
+    # 7.1.1 How is data protection (DSGVO) implemented?
+    -   title: 'gdprMeasures'
+        prefix: 'trusted-cloud'
+        dataType: 'trusted-cloud:GdprMeasures'
+        cardinality: '1..1'
+        description: 'Information about technical and organizational measures for GDPR.'
+        exampleValues: [ '(a structured object of type GpdrMeasures)' ]
+
+    # 7.2 GDPR compliance and compliance proof
+    -   title: 'gdprCompliance'
+        prefix: 'trusted-cloud'
+        dataType: 'trusted-cloud:GdprCompliance'
+        cardinality: '1..1'
+        description: 'Information of compliance of European General Data Protection Regulation (GDPR)'
+        exampleValues: [ '(a structured object of type GdprCompliance)' ]
+
+    # 7.4 Location of the data management
+    -   title: 'dataRetention'
+        prefix: 'trusted-cloud'
+        dataType: 'trusted-cloud:DataRetention'
+        cardinality: '1..1'
+        description: 'Information about limitation of customer data to specific regions'
+        exampleValues: [ 'a structured object of type DataRetention)' ]
+
+    # 7.5 Implementation of data subject rights
+    # 7.5.1 How is it guaranteed, that the requirements of the DSGVO for data subject rights are met?
+    -   title: 'dataSubjectRights'
+        prefix: 'trusted-cloud'
+        dataType: 'trusted-cloud:DataSubjectRights'
+        cardinality: '1..1'
+        description: 'Details on the implementation of the data subject rigths in accordance with Art. 12-23 GDPR?'
+        exampleValues: [ '/a structured object of type DataSubjectRights)' ]
+
+    # 7.6 Employers
+    # 7.6.1 Is the obligation for data processing of secret data written in the contract?
+    -   title: 'employeesCommitment'
+        prefix: 'trusted-cloud'
+        dataType: 'xsd:boolean'
+        cardinality: '1..1'
+        description: 'Is the obligation of all persons authorizied to process personal data to be subject to data secrecy according to Art. 28 (3) sentence 2 lit. b, 29, 32 para. 4 GDPR contractually defined??'
+        exampleValues: [ 'yes', 'no' ]
+
+    # 7.7 Data protection certification
+    ## Certificates are mapped to VC, which are not refered here. Instead,
+    # 'credentialSubject' of certificate VC referes to provider's DID
+    # 7.7.1 Name of the certificate
+    #-   title: 'dataProtectionCertificateName'
+    #    prefix: 'trusted-cloud'
+    #    dataType: 'xsd:string'
+    #    cardinality: '0..1'
+    #    description: 'Name of the data protection certificate'
+    #    exampleValues: [ 'Freetext' ]
+
+    # 7.7.2 Details about the certificate
+    #-   title: 'dataProtectionCertificateDetails'
+    #    prefix: 'trusted-cloud'
+    #    dataType: 'xsd:string'
+    #    cardinality: '0..1'
+    #    description: 'More details about the certificate e.g. examination, extension and so on'
+    #    exampleValues: [ 'Freetext' ]

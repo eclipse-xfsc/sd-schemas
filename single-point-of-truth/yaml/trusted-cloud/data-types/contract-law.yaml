@@ -1,0 +1,21 @@
+ContractLaw:
+    subClassOf: []
+    prefix: 'trusted-cloud'
+    attributes:
+    # 5.2 Applicable law and place of jurisdiction
+    # 5.2.1 Applicable law; minimal req. EU contract law
+    -   title: 'applicableLaw'
+        prefix: 'trusted-cloud'
+        dataType: 'xsd:string'
+        valueIn: [ 'german contract law', 'EU contract law' ]
+        cardinality: '0..1'
+        description: 'If EU contract law, a correct contract law has additinally to be written in a freetext field'
+        exampleValues: [ 'german contract law', 'EU contract law' ]
+
+    # 5.2.2 place of jursitdiction
+    -   title: 'placeOfJurisdiction'
+        prefix: 'trusted-cloud'
+        dataType: 'xsd:string' # ??
+        cardinality: '1..1'
+        description: 'EU contract law results in a place of jursdiction in the EU. Give the right place as written in the contract.'
+        exampleValues: [ 'Berlin', 'Paris', 'Rome' ]

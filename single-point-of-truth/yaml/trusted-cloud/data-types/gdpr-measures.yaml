@@ -1,0 +1,21 @@
+GdprMeasures:
+ subClassOf: []
+ prefix: 'trusted-cloud'
+ attributes:
+    # 7.1 Data protection
+    # 7.1.1 How is GDPR implemented?
+    -   title: 'gdprMeasures'
+        prefix: 'trusted-cloud'
+        dataType: 'xsd:string'
+        valueIn: [ 'Formally described', 'Contracted', 'Certified', 'Certified and reviewed regularly' ]
+        cardinality: '0..1'
+        description: 'How adequately does the implementation of technical and organizational measures take place by European General Data Protection Regulation (GDPR)?'
+        exampleValues: [ 'Formally described', 'Contracted', 'Certified', 'Certified and reviewed regularly' ]
+
+    # 7.1.2 Details about GDPR measures
+    -   title: 'details'
+        prefix: 'trusted-cloud'
+        dataType: 'xsd:string'
+        cardinality: '1..1'
+        description: 'Details about the implemented technical and organizational measurements.'
+        exampleValues: [ 'Freetext' ]

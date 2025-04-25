@@ -1,0 +1,46 @@
+GeneralInformationService:
+ subClassOf: []
+ prefix: 'trusted-cloud'
+ attributes:
+  # A.2.1 General information about the service
+    # A.2.1.1
+    -   title: 'name'
+        prefix: 'trusted-cloud'
+        cardinality: '1..1'
+        dataType: 'xsd:string'
+        description: 'Name of the service'
+        exampleValues: [ 'ACME Service' ]
+
+    # A.2.1.2
+    -   title: 'serviceLogo'
+        prefix: 'trusted-cloud'
+        cardinality: '0..1'
+        dataType: 'xsd:anyURI'
+        description: 'Resolvable link to logo of service that will be displayed at listing. Please provide image with at least 200 x 400 pixel.'
+        exampleValues: [ 'www.acme.com/logo.png' ]
+
+    # A.2.1.3
+    -   title: 'provisionType'
+        prefix: 'trusted-cloud'
+        cardinality: '1..1'
+        dataType: 'xsd:string'
+        valueIn: [ 'private', 'public', 'hybrid' ]
+        description: 'Type of provisioning of service.'
+        exampleValues: [ 'private', 'public', "hybrid" ]
+
+    # A.2.1.4
+    -   title: 'serviceModel'
+        prefix: 'trusted-cloud'
+        cardinality: '1..1'
+        dataType: 'xsd:string'
+        valueIn: [ 'IaaS', 'PaaS', 'SaaS' ]
+        description: 'Service Model for the service'
+        exampleValues: [ 'IaaS', 'PaaS', "SaaS" ]
+
+    # A.2.1.5
+    -   title: 'website'
+        prefix: 'trusted-cloud'
+        cardinality: '1..1'
+        dataType: 'xsd:anyURI'
+        description: 'Web address for the service presentation.'
+        exampleValues: [ 'http://myservice.com' ]

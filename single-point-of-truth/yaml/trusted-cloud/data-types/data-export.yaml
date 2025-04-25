@@ -1,0 +1,21 @@
+DataExport:
+    subClassOf: []
+    prefix: 'trusted-cloud'
+    attributes:
+    # 9.2 Data Export
+    # 9.2.1 Can the user always access customer data without restriction?
+    -   title: 'unlimitedAccessToCustomerData'
+        prefix: 'trusted-cloud'
+        dataType: 'xsd:string'
+        valueIn: [ 'Export can be done after agreement', 'Export over documented API', 'Standardized APIs are offered' ]
+        cardinality: '0..1'
+        description: 'Can the user access unlimited and at any time the customer data?'
+        exampleValues: [ 'Export can be done after agreement', 'Export over documented API', 'Standardized APIs are offered' ]
+
+    # 9.2.2 Description of the process of data repatriation
+    -   title: 'description'
+        prefix: 'trusted-cloud'
+        dataType: 'xsd:string'
+        cardinality: '1..1'
+        description: 'Description of procedures for data repatriation and supported file formats?'
+        exampleValues: [ 'Freetext' ]

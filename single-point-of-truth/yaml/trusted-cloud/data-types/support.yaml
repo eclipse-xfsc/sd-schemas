@@ -1,0 +1,91 @@
+Support:
+ subClassOf: []
+ prefix: 'trusted-cloud'
+ attributes:
+    # 8.6 Support
+    # 8.6.1 Description of the support service
+    -   title: 'description'
+        prefix: 'trusted-cloud'
+        dataType: 'xsd:string'
+        cardinality: '1..1'
+        description: 'Description of the scope of support services'
+        exampleValues: [ 'Freetext' ]
+
+    # 8.6.2 Guaranteed response time on normal requests
+    -   title: 'responseTimeOnNormalRequests'
+        prefix: 'trusted-cloud'
+        dataType: 'xsd:string'
+        valueIn: [ '4 hours', '1 work day', '<3 work days' ]
+        cardinality: '0..1'
+        description: 'What is the guaranteed response time on normal requests?'
+        exampleValues: [ '4 hours', '1 work day', '<3 work days' ]
+
+    # 8.6.3 Guaranteed response time on critical requests
+    -   title: 'responseTimeOnCriticalRequests'
+        prefix: 'trusted-cloud'
+        dataType: 'xsd:string'
+        valueIn: [ '4 hours', '1 work day', '<3 work days' ]
+        cardinality: '0..1'
+        description: 'What is the guaranteed response time on critical requests?'
+        exampleValues: [ '4 hours', '1 work day', '<3 work days' ]
+
+    # 8.6.4 What's the average time until minor problems are resolved?
+    -   title: 'mainResolveTimeOfMinorProblems'
+        prefix: 'trusted-cloud'
+        dataType: 'xsd:string'
+        valueIn: [ '<1 work day', '1 work day', '<4 work days' ]
+        cardinality: '0..1'
+        description: 'Whats the average time until minor problems are resolved?'
+        exampleValues: [ '<1 work day', '1 work day', '<4 work days' ]
+
+    # 8.6.5 What's the average time until major problems are resolved?
+    -   title: 'mainResolveTimeMajorProblems'
+        prefix: 'trusted-cloud'
+        dataType: 'xsd:string'
+        valueIn: [ '<1 work day', '1 work day', '<4 work days' ]
+        cardinality: '0..1'
+        description: 'What is the average time until major problems are resolved?'
+        exampleValues: [ '<1 work day', '1 work day', '<4 work days' ]
+
+    # 8.6.6 Availability of the support
+    -   title: 'availabilityOfSupport'
+        prefix: 'trusted-cloud'
+        dataType: 'xsd:string'
+        valueIn: [ '5x8', '24/7' ]
+        cardinality: '0..1'
+        description: 'What is the availability of the support?'
+        exampleValues: [ '5x8', '24/7' ]
+
+    # 8.6.7 Complete user documentation
+    -   title: 'userDocumentationCompleteness'
+        prefix: 'trusted-cloud'
+        dataType: 'xsd:string'
+        valueIn: [ 'Complete and updated', 'Regularly updated', 'Updated version online' ]
+        cardinality: '0..1'
+        description: 'Is there a complete user documentation?'
+        exampleValues: [ 'Complete and updated', 'Regularly updated', 'Updated version online' ]
+
+    # 8.6.8 Complete system documentation
+    -   title: 'systemDocumentationCompleteness'
+        prefix: 'trusted-cloud'
+        dataType: 'xsd:string'
+        valueIn: [ 'Complete and updated', 'On request' ]
+        cardinality: '0..1'
+        description: 'Is there a complete system documentation?'
+        exampleValues: [ 'Complete and updated', 'On request' ]
+
+    # 8.6.9 Is training offered?
+    -   title: 'trainingOffered'
+        prefix: 'trusted-cloud'
+        dataType: 'xsd:boolean'
+        cardinality: '0..1'
+        description: 'Are trainings offered?'
+        exampleValues: [ 'Yes', 'No' ]
+
+    # 8.6.10 Specifications of traing partners
+    -   title: 'trainingPartners'
+        prefix: 'trusted-cloud'
+        dataType: 'xsd:string'
+        cardinality: '0..*'
+        description: 'Specification from training partners'
+        exampleValues: [ 'Freetext' ]

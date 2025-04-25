@@ -1,0 +1,49 @@
+ServiceManagement:
+ subClassOf: []
+ prefix: 'trusted-cloud'
+ attributes:
+    # A.8.1 Service Management
+    # A.8.1.1 Is there an efficient service management guaranteed?
+    -   title: 'serviceManagement'
+        prefix: 'trusted-cloud'
+        dataType: 'xsd:string'
+        valueIn: [ 'Formally described', 'According to accepted procedure', 'Certified', 'Certified and checked regularly' ]
+        cardinality: '0..1'
+        description: 'Is an efficient service management ensured e.g. as per ITIL?'
+        exampleValues: [ 'Formally described', 'According to accepted procedure', 'Certified', 'Certified and checked regularly' ]
+
+    # A.8.1.2 More details about the service management
+    -   title: 'details'
+        prefix: 'trusted-cloud'
+        dataType: 'xsd:string'
+        cardinality: '1..1'
+        description: 'Details about the service management'
+        exampleValues: [ 'Freetext' ]
+
+
+    # A.8.2.1 & A.8.2.2 Certificates service management
+    -   title: 'certificates'
+        prefix: 'trusted-cloud'
+        dataType: 'trusted-cloud:CertificateScope'
+        cardinality: '0..*'
+        description: 'Details about certificates, which are relevant for this service.'
+        exampleValues: [ '(a structured object of type Certificate' ]
+
+    # Certificates are mapped to VC, which are not refered here. Instead,
+    # 'credentialSubject' of certificate VC referes to provider's DID
+    # 8.2.1 Name of the certificate
+    #-   title: 'serviceManagementCertificateName'
+    #    prefix: 'trusted-cloud'
+    #    dataType: 'xsd:string'
+    #    cardinality: '0..1'
+    #    description: 'Service management certificate name'
+    #    exampleValues: [ 'Freetext' ]
+
+    # 8.2.2 More certificate details
+    #-   title: 'serviceManagementCertificateDetails'
+    #    prefix: 'trusted-cloud'
+    #    dataType: 'xsd:string'
+    #    cardinality: '0..1'
+    #    description: 'More details about the certificate e.g. examination, extension and so on'
+    #    exampleValues: [ 'Freetext' ]
+

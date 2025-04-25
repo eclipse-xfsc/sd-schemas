@@ -1,0 +1,84 @@
+ProviderLegalInformation:
+    subClassOf: ['trusted-cloud:LegalInformation']
+    prefix: 'trusted-cloud'
+    attributes:
+    # A.1.1.0
+    -   title: 'typeOfApplication'
+        prefix: 'trusted-cloud'
+        dataType: 'xsd:string'
+        valueIn: ['Cloud Service', 'Cloud Consultants & Cloud Service']
+        cardinality: '0..1'
+        description: 'Type of Application offered'
+        exampleValues: [ 'Cloud Service' ]
+    # A.1.1.3
+    -   title: 'vatNumber'
+        prefix: 'trusted-cloud'
+        dataType: 'xsd:string' # TODO: we need a special VAT Number data type here
+        cardinality: '0..1'
+        description: 'Organization’s VAT / sales tax-id number. Either vatNumber or registrationNumber has to be set.'
+        exampleValues: [ 'DE999999999' ]
+
+    # A.1.1.5
+    -   title: 'registrationDate'
+        prefix: 'trusted-cloud'
+        dataType: 'xsd:dateTimeStamp'
+        cardinality: '1..1'
+        description: 'Date of the legal registration.'
+        exampleValues: [ '2021-10-18T12:00:00+01:00' ]
+
+    # A.1.1.6
+    -   title: 'sme'
+        prefix: 'trusted-cloud'
+        dataType: 'xsd:boolean'
+        cardinality: '1..1'
+        default: "True"
+        description: 'Is the company a "small or medium sized" company?.'
+        exampleValues: [ 'True', 'False' ]
+
+    # A.1.1.8
+    -   title: 'managingDirector'
+        prefix: 'trusted-cloud'
+        dataType: 'vcard:Agent'
+        cardinality: '1..*'
+        description: 'Managing director or legal guardian of the organization.'
+        exampleValues: [ '(a structured object ot tyoe vcard:Agent)' ]
+
+    # A.1.1.9
+    -   title: 'mainContact'
+        prefix: 'trusted-cloud'
+        dataType: 'vcard:Agent'
+        cardinality: '1..1'
+        description: 'Main contact of the organization'
+        exampleValues: [ '(Jana Mustermann, jana.mustermann@acme.com, +49 030 123456789)' ]
+
+    # A.1.1.10
+    -   title: 'dataProtectionOfficer'
+        prefix: 'trusted-cloud'
+        dataType: 'vcard:Agent'
+        cardinality: '1..1'
+        description: 'A contact within an organization to contact for data protection purposes.'
+        exampleValues: [ '(Jane Mustermann, jane.mustermann@acme.com, +49 030 123456789)' ]
+
+    # A.1.1.11
+    -   title: 'itDepartmentContact'
+        prefix: 'trusted-cloud'
+        dataType: 'vcard:Agent'
+        cardinality: '0..1'
+        description: 'A contact within an organization to contact for technical purposes.'
+        exampleValues: [ '(Tom Mustermann, tom.mustermann@acme.com, +49 030 123456789)' ]
+
+    # A.1.1.12
+    -   title: 'legalContact'
+        prefix: 'trusted-cloud'
+        dataType: 'vcard:Agent'
+        cardinality: '0..1'
+        description: 'A contact within an organization to contact for data protection purposes.'
+        exampleValues: [ '(Sigfried Mustermann, sigfried.mustermann@acme.com, +49 030 123456789)' ]
+
+    # A.1.1.14
+    -   title: 'description'
+        prefix: 'trusted-cloud'
+        dataType: 'xsd:string'
+        cardinality: '0..1'
+        description: 'Description of the organization.'
+        exampleValues: [ 'A company making everything' ]

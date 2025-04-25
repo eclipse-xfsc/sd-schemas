@@ -1,0 +1,34 @@
+# Definition of all prefixes used in the gax-core specification
+Prefixes:
+####################################################################
+  - name: 'gax-core'
+    value: 'http://w3id.org/gaia-x/core#'
+####################################################################
+  - name: 'cc'
+    value: 'http://creativecommons.org/ns#'
+  - name: 'ids'
+    value: 'https://w3id.org/idsa/core/'
+  - name: 'owl'
+    value: 'http://www.w3.org/2002/07/owl#'
+  - name: 'rdf'
+    value: 'http://www.w3.org/1999/02/22-rdf-syntax-ns#'
+  - name: 'rdfs'
+    value: 'http://www.w3.org/2000/01/rdf-schema#'
+  - name: 'skos'
+    value: 'http://www.w3.org/2004/02/skos/core#'
+  - name: 'vann'
+    value: 'http://purl.org/vocab/vann/'
+  - name: 'voaf'
+    value: 'http://purl.org/vocommons/voaf#'
+  - name: 'void'
+    value: 'http://rdfs.org/ns/void#'
+  - name: 'schema'
+    value: 'http://schema.org/'
+  - name: 'xsd'
+    value: 'http://www.w3.org/2001/XMLSchema#'
+  - name: 'dct'
+    value: 'http://purl.org/dc/terms/'
+  - name: 'dcat'
+    value: 'http://www.w3.org/ns/dcat#'
+
+

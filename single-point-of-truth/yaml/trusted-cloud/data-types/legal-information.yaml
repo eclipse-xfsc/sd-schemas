@@ -1,0 +1,52 @@
+LegalInformation:
+ abstract: True
+ subClassOf: []
+ prefix: 'trusted-cloud'
+ attributes:
+# A.1.1.1 & A.3.1.1 Company Name
+ -  title: 'legalName'
+    prefix: 'trusted-cloud'
+    dataType: 'xsd:string'
+    cardinality: '1..1'
+    description: 'Legally binding name.'
+    exampleValues: [ 'ACME' ]
+
+ # A.1.1.2 & A.3.1.2 Legal Form
+ -  title: 'legalForm'
+    prefix: 'trusted-cloud'
+    dataType: 'xsd:string' # TODO: controlled vocab: List of legal forms to choose from
+    cardinality: '1..1'
+    description: 'Legal form of organization.'
+    exampleValues: [ 'AG, GmbH' ]
+
+ # A.1.1.4 & A.3.1.3 Register number
+ -  title: 'registrationNumber'
+    prefix: 'trusted-cloud'
+    dataType: 'xsd:string'
+    cardinality: '0..1'
+    description: 'Country’s registration number which identify one specific company.'
+    exampleValues: [ 'DEK1234R.HRB123456' ]
+
+ # A.1.1.7 & A.3.1.4 Main address
+ -  title: 'headquarterAddress'
+    prefix: 'trusted-cloud'
+    dataType: 'vcard:Address'
+    cardinality: '1..1'
+    description: 'Address of head offcie or main subsidary.'
+    exampleValues: [ '(a structured object ot tyoe vcard:Address)' ]
+
+ # A.1.1.13 & A.3.1.8 Website
+ -  title: 'webAddress'
+    prefix: 'trusted-cloud'
+    dataType: 'xsd:anyURI'
+    cardinality: '1..1'
+    description: 'Resolvable URL to web page of this organization.'
+    exampleValues: [ 'www.acme.com' ]
+
+ # A.1.1.15 & A.3.1.7 Logo
+ -  title: 'logo'
+    prefix: 'trusted-cloud'
+    dataType: 'xsd:anyURI'
+    cardinality: '0..1'
+    description: 'Resolvable URL to logo of this organization.'
+    exampleValues: [ 'www.acme.com/logo' ]

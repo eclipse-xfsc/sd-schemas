@@ -1,0 +1,59 @@
+Certificate:
+    # A.4.1 & A.4.2
+    subClassOf: []
+    prefix: 'trusted-cloud'
+    attributes:
+    # A.4.1.1 &  A.4.2.1 Certificate Name
+    -   title: 'name'
+        prefix: 'trusted-cloud'
+        dataType: 'xsd:string'
+        cardinality: '1..1'
+        description: 'Name of certificate'
+        exampleValues: [ 'ISO XYZ' ]
+
+    # A.4.1.2 & A.4.2.2 Certificate type
+    -   title: 'type'
+        prefix: 'trusted-cloud'
+        dataType: 'xsd:string'
+        valueIn: [ 'BSI IT-Grundschutz', 'CSA Star', 'EuroCloud Star Audit', 'EuroPrise', 'FedRAMP', 'ISAE 3402/SSAE 16 Typ II', 'ISO 27001', 'ISO 27018', 'Trust in Cloud', 'Trusted Cloud - TÜV', 'TRUSTed Cloud Privacy', 'TÜV Cloud Security', 'TCDP', 'others' ]
+        cardinality: '1..1'
+        description: 'Type of the certificates'
+        exampleValues: [ 'BSI IT-Grundschutz', 'ISO 27001', 'Trust in Cloud' ]
+
+    # A.4.1.4 & A.4.2.4 Certificate authority
+    # Mapping to VC' issuer
+    -   title: 'certificateAuthority'
+        prefix: 'trusted-cloud'
+        dataType: 'trusted-cloud:CertificationBody'
+        cardinality: '1..1'
+        description: 'Certificate authority for this service or its certificate'
+        exampleValues: [ 'TÜV Süd' ]
+
+    # A.4.1.5 & A.4.2.5 Certificate document
+    # We do not need an explicit document, because VC as proof for certificate already
+    # The idea is, that either certification authority issues certificate VC or third party (e.g. Notarization Service)
+    # issues certification VC. If Notarization Service issues certificate, then pdf certificate musst be send additionally, but
+    # should not be part of VC, itself.
+    #-   title: 'linkToDocument'
+    #    prefix: 'trusted-cloud'
+    #    dataType: 'xsd:anyURI'
+    #    cardinality: '1..1'
+    #    description: 'Resolvable URL to document of the certificate.'
+    #    exampleValues: [ 'www.acme.com/logo' ]
+
+    # A.4.1.6 & A.4.2.6 Expiration date
+    # Mapping to VC's expiration date
+    -   title: 'expirationDate'
+        prefix: 'trusted-cloud'
+        dataType: 'xsd:date'
+        cardinality: '1..1'
+        description: 'Date on which the certificate expires'
+        exampleValues: [ '2122-12-21' ]
+
+    # A.4.1.7 & A.4.2.7 Are regular audits done?
+    -   title: 'regularAudited'
+        prefix: 'trusted-cloud'
+        dataType: 'xsd:boolean'
+        cardinality: '1..1'
+        description: 'Is the certificate regularly audited?'
+        exampleValues: [ 'True', 'False' ]

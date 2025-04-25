@@ -1,0 +1,90 @@
+{
+  "title": "GAIA-X Entity descriptions",
+  "description": "An entity of the conceptual model",
+  "type": "object",
+  "patternProperties": {
+    "^[A-Z][a-z,A-Z]+$": {
+      "type": "object",
+      "additionalProperties": false,
+      "properties": {
+        "abstract": {
+          "description": "True if this class is abstract and not allowed for instantiation",
+          "type": "boolean"
+        },
+        "subClassOf": {
+          "description": "List of super classes this class inherit from. Note super class must exist in somewhere in YAML files.",
+          "type": "array",
+          "items": {
+            "type": "string"
+          }
+        },
+        "prefix": {
+          "description": "The prefix defining the namespace of this attribute.",
+          "type": "string",
+          "examples": [
+            "gax-core"
+          ]
+        },
+        "attributes": {
+          "description": "Attributes of this entity.",
+          "type": "array",
+          "items": {
+            "type": "object",
+            "properties": {
+              "title": {
+                "description": "The name of this attribute.",
+                "type": "string",
+                "examples": [
+                  "hasLegallyBindingName"
+                ]
+              },
+              "prefix": {
+                "description": "The prefix defining the namespace of this attribute.",
+                "type": "string",
+                "examples": [
+                  "gax-core"
+                ]
+              },
+              "dataType": {
+                "description": "data type description, see https://www.w3.org/TR/xmlschema-2/. Possible values are https://www.w3.org/TR/xmlschema-2/#built-in-primitive-datatypes. with URI example: http://www.w3.org/2001/XMLSchema#string",
+                "type": "string",
+                "examples": [
+                  "xsd:string"
+                ]
+              },
+              "cardinality": {
+                "description": "The attributes's cardinality. E.g. `0..*`.",
+                "type": "string",
+                "pattern": "^\\d+\\.\\.(\\d+|\\*)$"
+              },
+              "description": {
+                "description": "General description",
+                "type": "string",
+                "examples": [
+                  "legal name"
+                ]
+              },
+              "exampleValues": {
+                "description": "List of example values. At least one example value is mandatory.",
+                "type": "array",
+                "items": {
+                  "type": "string"
+                },
+                "minItems": 1
+              }
+            },
+            "required": [
+              "title",
+              "dataType",
+              "description",
+              "exampleValues",
+              "cardinality"
+            ]
+          },
+          "uniqueItems": true
+        }
+      }
+    }
+  },
+  "additionalProperties": false
+}

@@ -1,0 +1,21 @@
+RequirementsServiceUsage:
+    subClassOf: []
+    prefix: 'trusted-cloud'
+    attributes:
+    # 9.4 Technical and organizational requirements for service usage
+    # 9.4.1 Description of technical requirements for usage of the service
+    -   title: 'technicalRequirements'
+        prefix: 'trusted-cloud'
+        dataType: 'xsd:string'
+        cardinality: '1..1'  
+        description: 'Description for the technical requirements to use the service'
+        exampleValues: [ 'Freetext' ]
+
+    # 9.4.2 Description of organizational requirements to use the service
+    -
+        title: 'organizationalRequirements'
+        prefix: 'trusted-cloud'
+        dataType: 'xsd:string'
+        cardinality: '1..1'  
+        description: 'Description for the organizational requirements to use the service'
+        exampleValues: [ 'Freetext' ]

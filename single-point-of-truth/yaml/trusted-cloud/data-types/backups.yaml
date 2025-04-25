@@ -1,0 +1,20 @@
+Backups:
+ subClassOf: []
+ prefix: 'trusted-cloud'
+ attributes:
+    # 8.4 Backups
+    # 8.4.1 Description of the backup options
+    -   title: 'backupOptions'
+        prefix: 'trusted-cloud'
+        dataType: 'xsd:string'
+        cardinality: '1..1'
+        description: 'Description of backup options'
+        exampleValues: [ 'Freetext' ]
+
+    # 8.4.2 How is guaranteed, that data protection is extended onto the backups?
+    -   title: 'confidentiality'
+        prefix: 'trusted-cloud'
+        dataType: 'xsd:string'
+        cardinality: '1..1'
+        description: 'Is it guaranteed, that data protection is also extended to the backup?'
+        exampleValues: [ 'Freetext' ]

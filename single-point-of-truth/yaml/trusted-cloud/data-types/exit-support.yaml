@@ -1,0 +1,20 @@
+ExitSupport:
+    subClassOf: []
+    prefix: 'trusted-cloud'
+    attributes:    
+    # 5.10 Termination support
+    # 5.10.1 Are there rules defined in the contract for the termination support?
+    -   title: 'rulesContacted'
+        prefix: 'trusted-cloud'
+        dataType: 'xsd:boolean'
+        cardinality: '1..1'  
+        description: 'Are rules and measures for exit support contractually defined?'
+        exampleValues: [ 'True', 'False' ]
+
+    # 5.10.2 Description of the rules  for termination support
+    -   title: 'descriptionOfRules'
+        prefix: 'trusted-cloud'
+        dataType: 'xsd:string'
+        cardinality: '1..1'  
+        description: 'Description of the rules for termination support'
+        exampleValues: [ 'Freetext' ]

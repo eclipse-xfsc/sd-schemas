@@ -1,0 +1,47 @@
+OperativeProcesses:
+    subClassOf: []
+    prefix: 'trusted-cloud'
+    attributes:
+    # 8.1 Service Management
+    -   title: 'serviceManagement'
+        prefix: 'trusted-cloud'
+        dataType: 'trusted-cloud:ServiceManagement'
+        cardinality: '1..1'
+        description: 'Information about efficient service management for ensuring the quality of service?'
+        exampleValues: [ '(a structured object of type ServiceManagement)' ]
+
+    # 8.3 Service availability
+    # 8.3.1 Assured service availability in percent per year
+    -   title: 'serviceAvailability'
+        prefix: 'trusted-cloud'
+        dataType: 'trusted-cloud:ServiceAvailability'
+        cardinality: '1..1'
+        description: 'Information of ensured service availability in service level agreements.'
+        exampleValues: [ '(a structured object of type ServiceAvailability)' ]
+
+    # 8.4 Backups
+    # 8.4.1 Description of the backup options
+    -   title: 'backups'
+        prefix: 'trusted-cloud'
+        dataType: 'trusted-cloud:Backups'
+        cardinality: '1..1'
+        description: 'Details on backup options and implementation of data protection concepts.'
+        exampleValues: [ '(a structured object of type Backups)' ]
+
+    # 8.5 Provisioning
+    # 8.5.1 Can the customer provision his own service?
+    -   title: 'provisionPossibility'
+        prefix: 'trusted-cloud'
+        dataType: 'xsd:string'
+        valueIn: [ 'Customer cannot provision', 'Customer can provision' ]
+        cardinality: '0..1'
+        description: 'Can the customer provision the service himself?'
+        exampleValues: [ 'Customer cannot provision', 'Customer can provision' ]
+
+    # 8.6 Support
+    -   title: 'support'
+        prefix: 'trusted-cloud'
+        dataType: 'trusted-cloud:Support'
+        cardinality: '1..1'
+        description: 'Information about support services and documentation.'
+        exampleValues: [ '(a structured object of type Support)' ]
